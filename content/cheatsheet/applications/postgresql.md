@@ -15,7 +15,7 @@ SELECT
     pid,
     usename AS "username",
     client_addr AS "source ip",
-    query,
+    (SELECT TRIM( LEADING E'\n' FROM query )) as "query",  -- Adjusts query visualization in some softwares
     ( 
         SELECT EXTRACT (
             EPOCH FROM ( 
