@@ -5,13 +5,13 @@ type: docs
 bookCollapseSection: false
 bookFlatSection: false
 bookToc: true
-
 ---
 
 ## inspect bad queries
 
 ```sql
 SELECT
+    CONCAT("CALL mysql.rds_kill_query('" , ID, "');") as run_to_kill,
     ID, USER, DB, STATE, TIME, INFO
 FROM
     information_schema.processlist
