@@ -182,6 +182,12 @@ JOIN
     pg_namespace nsp ON defacl.defaclnamespace=nsp.oid;
 ```
 
+## change ownership
+```sql
+SET ROLE old_owner;
+REASSIGN OWNED BY old_owner TO new_owner;
+```
+
 ## get user roles
 
 ```sql
