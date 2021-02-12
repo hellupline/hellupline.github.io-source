@@ -112,7 +112,7 @@ kubectl --namespace="${NAMESPACE}" exec -it "${POD_NAME}" -- bash
 ```bash
 NAMESPACE="production"
 DEPLOYMENT="my-app"
-POD_LABEL=${$(kubectl get deployments "${DEPLOYMENT}" --output=json | jq -j '.spec.selector.matchLabels | to_entries | .[] | "\(.key)=\(.value),"')%?}
+POD_LABEL=${$(kubectl --namespace="${NAMESPACE}" get deployments "${DEPLOYMENT}" --output=json | jq -j '.spec.selector.matchLabels | to_entries | .[] | "\(.key)=\(.value),"')%?}
 POD_NAME=$(kubectl --namespace="${NAMESPACE}" get --output jsonpath='{.items[0].metadata.name}' pods --selector="${POD_LABEL}")
 
 kubectl --namespace="${NAMESPACE}" cp "${POD_NAME}":/etc/letsencrypt etc-letsencrypt
