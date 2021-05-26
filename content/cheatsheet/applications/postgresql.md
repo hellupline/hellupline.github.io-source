@@ -211,11 +211,7 @@ ALTER GROUP example_group ADD USER example_user;
 SELECT
 	u.usename AS "rolname",
 	u.usesuper AS "rolsuper",
-	true AS "rolinherit",
-	false AS "rolcreaterole",
 	u.usecreatedb AS "rolcreatedb",
-	true AS "rolcanlogin",
-	-1 AS "rolconnlimit",
 	u.valuntil AS "rolvaliduntil",
 	ARRAY(
 		SELECT
@@ -231,6 +227,21 @@ WHERE
 	u.usename = 'YOUR_USERNAME_HERE'
 ORDER BY
 	rolname;
+
+--- Query to list all users and schemas they have access
+SELECT
+	pg_user.usename,
+	pg_namespace.nspname,
+	has_schema_privilege ( pg_user.usename, pg_namespace.nspname, 'usage' ) 
+FROM
+	pg_user
+CROSS
+	JOIN pg_namespace 
+WHERE
+	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin' ) 
+	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
+	AND pg_user.usename NOT IN ( 'yoda' ) 
+	AND pg_user.usename NOT LIKE 'app_%';
 ```
 
 ## run a postresql in docker
