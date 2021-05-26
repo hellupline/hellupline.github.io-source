@@ -242,6 +242,18 @@ WHERE
 	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
 	AND pg_user.usename NOT IN ( 'admin' ) 
 	AND pg_user.usename NOT LIKE 'app_%';
+
+--- Query to find all schemas without an associated `RO` group
+SELECT
+	pg_namespace.nspname 
+FROM
+	pg_namespace 
+WHERE
+	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin' ) 
+	AND pg_namespace.nspname NOT LIKE'pg_temp_%' 
+	AND CONCAT ( pg_namespace.nspname, '_ro' ) NOT IN ( SELECT pg_group.groname FROM pg_group ) 
+ORDER BY
+	pg_namespace.nspname ASC;
 ```
 
 ## run a postresql in docker
