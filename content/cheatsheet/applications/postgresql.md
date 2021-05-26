@@ -256,6 +256,21 @@ ORDER BY
 	pg_namespace.nspname ASC;
 ```
 
+```bash
+SCHEMAS=(
+	schema1
+	schema2
+)
+for SCHEMA_NAME in ${SCHEMAS[@]}; do
+	GROUP_NAME="${SCHEMA_NAME}_ro"
+	echo "CREATE GROUP ${GROUP_NAME};"
+	echo "GRANT USAGE ON SCHEMA ${SCHEMA_NAME} TO GROUP ${GROUP_NAME};"
+	echo "ALTER DEFAULT PRIVILEGES IN SCHEMA ${SCHEMA_NAME} GRANT SELECT ON TABLES TO GROUP ${GROUP_NAME};"
+	echo "GRANT SELECT ON ALL TABLES IN SCHEMA ${SCHEMA_NAME} TO GROUP ${GROUP_NAME};"
+done
+
+```
+
 ## run a postresql in docker
 
 ```bash
