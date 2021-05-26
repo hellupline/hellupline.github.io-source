@@ -235,8 +235,8 @@ SELECT
 	has_schema_privilege ( pg_user.usename, pg_namespace.nspname, 'usage' ) 
 FROM
 	pg_user
-CROSS
-	JOIN pg_namespace 
+CROSS JOIN
+	pg_namespace 
 WHERE
 	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin' ) 
 	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
