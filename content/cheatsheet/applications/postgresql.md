@@ -240,7 +240,7 @@ CROSS
 WHERE
 	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin' ) 
 	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
-	AND pg_user.usename NOT IN ( 'yoda' ) 
+	AND pg_user.usename NOT IN ( 'admin' ) 
 	AND pg_user.usename NOT LIKE 'app_%';
 ```
 
