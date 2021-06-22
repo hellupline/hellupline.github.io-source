@@ -20,11 +20,11 @@ SELECT
 	state as "state",
 	TRIM(LEADING E'\n' FROM query) AS "query",  -- Adjusts query visualization in some softwares
 FROM
-	pg_stat_activity 
+	pg_stat_activity
 WHERE
 	state != 'idle';
 ```
-	
+
 
 ## show where a user has permissions
 
@@ -38,11 +38,11 @@ SELECT
 	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'insert') AS "insert",
 	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'update') AS "update",
 	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'delete') AS "delete",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'references') AS "references" 
+	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'references') AS "references"
 FROM
 	pg_tables,
 	(
-		SELECT 'role' AS kind, rolname AS name FROM  pg_roles 
+		SELECT 'role' AS kind, rolname AS name FROM  pg_roles
 		UNION
 		SELECT 'user' AS kind, usename AS name FROM pg_user
 	) AS roles
@@ -57,6 +57,7 @@ ORDER BY
 	roles.name ASC;
 
 ```
+
 
 ## show objects ownership
 
@@ -89,6 +90,7 @@ ORDER BY
 	pg_class.relname;
 ```
 
+
 ## show table sizes
 
 ```sql
@@ -97,7 +99,7 @@ SELECT
 	pg_class.relname AS "object_name",
 	pg_size_pretty(pg_total_relation_size(pg_class.oid)) AS "total_size"
 FROM
-	pg_class 
+	pg_class
 LEFT JOIN
 	pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
 WHERE
@@ -107,6 +109,7 @@ WHERE
 ORDER BY
 	pg_total_relation_size(pg_class.oid) DESC;
 ```
+
 
 ## create a read-only access
 
@@ -148,13 +151,6 @@ CREATE ROLE example_user WITH NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION 
 GRANT example_group_ro TO example_user;
 ```
 
-### in redshit
-
-```sql
-CREATE GROUP "example_group_ro";
-GRANT USAGE ON SCHEMA example_schema TO GROUP example_group_ro;
-GRANT SELECT ON ALL TABLES IN SCHEMA example_schema TO GROUP example_group_ro;
-```
 
 ## inspect default schema privileges
 
@@ -177,101 +173,29 @@ JOIN
     pg_namespace ON pg_default_acl.defaclnamespace = pg_namespace.oid;
 ```
 
+
 ## change ownership
+
 ```sql
 SET ROLE old_owner;
 REASSIGN OWNED BY old_owner TO new_owner;
 ```
 
+
 ## get user roles
 
 ```sql
  SELECT
-	a.rolname,
-	ARRAY_AGG(b.rolname)
+	a.rolname AS "rolname",
+	b.rolname AS "rolname_memberof"
 FROM
-	pg_roles a,
-	pg_roles b
-WHERE
-	pg_has_role(a.rolname, b.oid, 'member')
+	pg_roles AS a
+INNER JOIN
+	pg_roles AS b ON pg_has_role(a.rolname, b.oid, 'member')
 GROUP BY
 	a.rolname;
 ```
 
-## redshift
-
-```sql
--- Create a new user
-CREATE USER example_user WITH PASSWORD 'mysecretpassword';
-
--- Add users to an existing group
-ALTER GROUP example_group ADD USER example_user;
-
---- Query to check all groups a user is in
-SELECT
-	u.usename AS "rolname",
-	u.usesuper AS "rolsuper",
-	u.usecreatedb AS "rolcreatedb",
-	u.valuntil AS "rolvaliduntil",
-	ARRAY(
-		SELECT
-			g.groname
-		FROM
-			pg_catalog.pg_group g
-		WHERE
-			u.usesysid = ANY(g.grolist)
-	) AS "memberof"
-FROM
-	pg_catalog.pg_user u
-WHERE
-	u.usename = 'YOUR_USERNAME_HERE'
-ORDER BY
-	rolname;
-
---- Query to list all users with usage access per schema
-SELECT
-	pg_user.usename,
-	pg_namespace.nspname 
-FROM
-	pg_user
-	CROSS JOIN pg_namespace 
-WHERE
-	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin', 'public' ) 
-	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
-	AND pg_user.usename NOT IN ( 'admin' ) 
-	AND pg_user.usename NOT LIKE 'app_%' 
-	AND has_schema_privilege ( pg_user.usename, pg_namespace.nspname, 'usage' ) 
-ORDER BY
-	pg_user.usename ASC,
-	pg_namespace.nspname ASC;
-
---- Query to find all schemas without an associated `RO` group
-SELECT
-	pg_namespace.nspname 
-FROM
-	pg_namespace 
-WHERE
-	pg_namespace.nspname NOT IN ( 'pg_internal', 'pg_toast', 'pg_catalog', 'admin' ) 
-	AND pg_namespace.nspname NOT LIKE 'pg_temp_%' 
-	AND CONCAT ( pg_namespace.nspname, '_ro' ) NOT IN ( SELECT pg_group.groname FROM pg_group ) 
-ORDER BY
-	pg_namespace.nspname ASC;
-```
-
-```bash
-SCHEMAS=(
-	schema1
-	schema2
-)
-for SCHEMA_NAME in ${SCHEMAS[@]}; do
-	GROUP_NAME="${SCHEMA_NAME}_ro"
-	echo "CREATE GROUP ${GROUP_NAME};"
-	echo "GRANT USAGE ON SCHEMA ${SCHEMA_NAME} TO GROUP ${GROUP_NAME};"
-	echo "ALTER DEFAULT PRIVILEGES IN SCHEMA ${SCHEMA_NAME} GRANT SELECT ON TABLES TO GROUP ${GROUP_NAME};"
-	echo "GRANT SELECT ON ALL TABLES IN SCHEMA ${SCHEMA_NAME} TO GROUP ${GROUP_NAME};"
-done
-
-```
 
 ## run a postresql in docker
 
