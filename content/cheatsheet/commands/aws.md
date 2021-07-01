@@ -8,6 +8,27 @@ bookToc: true
 
 ---
 
+## describe ec2, get name, ami, private ip, id, ssm start-session
+
+```bash
+aws --profile=default --region=us-east-1 ec2 describe-instances | jq --raw-output '
+[
+    .Reservations[].Instances[]
+    | select(.State.Name == "running")
+    | . as $instance
+    | [
+        first($instance.Tags[] | select(.Key == "Name")).Value // "NoName",
+        $instance.ImageId,
+        $instance.PrivateIpAddress,
+        $instance.InstanceId,
+        "aws ssm start-session --target \($instance.InstanceId)"
+    ]
+]
+| sort_by(.[0], .[1], .[2])[]
+| @csv
+' | column -t -s ","
+```
+
 
 ## describe rds, filter by cacertificate version
 
