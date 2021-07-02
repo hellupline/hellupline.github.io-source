@@ -8,14 +8,15 @@ bookToc: true
 
 ---
 
-## describe ec2, get name, ami, private ip, id, ssm start-session
+## describe ec2 as csv, filter by env==prod beanstalk:environment-name==my-app
 
 ```bash
-aws --profile=default --region=us-east-1 ec2 describe-instances | jq --raw-output '
+aws ec2 describe-instances | jq --raw-output '
 [
     .Reservations[].Instances[]
     | . as $instance
     | select(.State.Name == "running")
+    | select((first($instance.Tags[] | select(.Key == "elasticbeanstalk:environment-name")).Value ) == "my-app")
     | select((first($instance.Tags[] | select(.Key == "env")).Value ) == "prod")
     | {
         "Name": (first($instance.Tags[]? | select(.Key == "Name")).Value // "NoName"),
@@ -62,6 +63,31 @@ aws --profile=default --region=us-east-1 ec2 describe-instances | jq --raw-outpu
 ```
 
 
+## list elastic ips
+
+```bash
+aws ec2 describe-addresses | jq --raw-output '
+[
+    .Addresses[]
+    | {
+        "Name": (first(.Tags[]? | select(.Key == "Name")).Value // "NoName"),
+        "PublicIp": .PublicIp,
+        "Tags": ([.Tags[] | "\(.Key)=\(.Value)"] | sort | join("|"))
+    }
+]
+| sort_by(.Name)
+| [
+    "Name",
+    "PublicIp"
+    # "Tags"
+] as $cols
+| map(. as $row | $cols | map($row[.])) as $rows
+| $cols, $rows[]
+| @csv
+' | column -t -s ","
+```
+
+
 ## describe rds, filter by cacertificate version
 
 ```bash
@@ -77,33 +103,6 @@ for PROFILE_NAME in "staging" "production"; do
                 done
         done
 done
-```
-
-## list instance and private ips, filter by beanstalk environment
-
-```bash
-aws --profile=default --region=us-east-1 ec2 describe-instances
-         --filter "Name=tag:elasticbeanstalk:environment-name,Values=my-app" | \
-   jq --raw-output '
-      (
-         [["instance-id", "private-ip"]] +
-         [.Reservations[].Instances[] | [.InstanceId, .PrivateIpAddress]]
-      )[] | @csv'
-```
-
-
-## list elastic ips
-
-```bash
-aws --profile=default --region=us-east-1 ec2 describe-addresses \
-         --public-ips \
-         --filter "Name=public-ip,Values=[10.0.0.1]" |
-   jq --raw-output '
-      (
-         [["public-ip"]] +
-         [.Addresses[] | [.PublicIp]]
-      )[] | @csv
-   '
 ```
 
 
