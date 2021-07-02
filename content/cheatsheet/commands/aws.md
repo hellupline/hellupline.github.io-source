@@ -15,6 +15,7 @@ aws ec2 describe-instances | jq --raw-output '
 [
     .Reservations[].Instances[]
     | select(.State.Name == "running")
+    | select((first(.Tags[] | select(.Key == "elasticbeanstalk:environment-name")).Value ) == "my-app")        
     | select((first(.Tags[] | select(.Key == "env")).Value ) == "prod")
     | {
         "Name": (first(.Tags[]? | select(.Key == "Name")).Value // "NoName"),
@@ -78,6 +79,36 @@ aws ec2 describe-addresses | jq --raw-output '
     "Name",
     "PublicIp"
     # "Tags"
+] as $cols
+| map(. as $row | $cols | map($row[.])) as $rows
+| $cols, $rows[]
+| @csv
+' | column -t -s ","
+```
+
+
+## cost usage
+
+```bash
+aws ce get-cost-and-usage \
+    --time-period Start="$(date "+%Y-%m-01" -d "-1 Month")",End="$(date --date="$(date +'%Y-%m-01') - 1 second" -I)" \
+    --granularity MONTHLY \
+    --metrics UsageQuantity \
+    --group-by Type=DIMENSION,Key=SERVICE \
+| jq --raw-output '
+[
+    .ResultsByTime[].Groups[]
+    | select((.Metrics.UsageQuantity.Amount | tonumber) > 0)
+    | {
+        "Name": (.Keys | join("|")),
+        "UsageQuantity": .Metrics.UsageQuantity.Amount
+    }
+]
+| sort_by(.UsageQuantity, .Name)
+| reverse
+| [
+    "Name",
+    "UsageQuantity"
 ] as $cols
 | map(. as $row | $cols | map($row[.])) as $rows
 | $cols, $rows[]
