@@ -14,17 +14,49 @@ bookToc: true
 aws --profile=default --region=us-east-1 ec2 describe-instances | jq --raw-output '
 [
     .Reservations[].Instances[]
-    | select(.State.Name == "running")
     | . as $instance
-    | [
-        first($instance.Tags[] | select(.Key == "Name")).Value // "NoName",
-        $instance.ImageId,
-        $instance.PrivateIpAddress,
-        $instance.InstanceId,
-        "aws ssm start-session --target \($instance.InstanceId)"
-    ]
+    | select(.State.Name == "running")
+    | select((first($instance.Tags[] | select(.Key == "env")).Value ) == "prod")
+    | {
+        "Name": (first($instance.Tags[]? | select(.Key == "Name")).Value // "NoName"),
+        "InstanceId": $instance.InstanceId,
+        "InstanceType": $instance.InstanceType,
+        "State": $instance.State.Name,
+        "LaunchTime": $instance.LaunchTime,
+        "ImageId": $instance.ImageId,
+        "AvailabilityZone": $instance.Placement.AvailabilityZone,
+        "IamInstanceProfile": $instance.IamInstanceProfile.Arn,
+        "SecurityGroupNames": ([$instance.SecurityGroups[].GroupName] | sort | join(",")),
+        "SecurityGroupIds": ([$instance.SecurityGroups[].GroupId] | sort | join(",")),
+        "VpcId": $instance.VpcId,
+        "SubnetId": $instance.SubnetId,
+        "PrivateIpAddress": $instance.PrivateIpAddress,
+        "KeyName": $instance.KeyName,
+        "Tags": ([$instance.Tags[] | "\(.Key)=\(.Value)"] | sort | join("|")),
+        "StartSession": "aws ssm start-session --target \($instance.InstanceId)"
+    }
 ]
-| sort_by(.[0], .[1], .[2])[]
+| sort_by(.ImageId, .InstanceType, .Name)
+| [
+    "Name",
+    "InstanceId",
+    "InstanceType",
+    # "State",
+    "LaunchTime",
+    "ImageId",
+    # "AvailabilityZone",
+    # "IamInstanceProfile",
+    # "SecurityGroupNames",
+    # "SecurityGroupIds",
+    # "VpcId",
+    # "SubnetId",
+    # "PrivateIpAddress",
+    # "KeyName",
+    # "Tags",
+    "StartSession"
+] as $cols
+| map(. as $row | $cols | map($row[.])) as $rows
+| $cols, $rows[]
 | @csv
 ' | column -t -s ","
 ```
