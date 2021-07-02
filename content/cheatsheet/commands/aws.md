@@ -14,27 +14,25 @@ bookToc: true
 aws ec2 describe-instances | jq --raw-output '
 [
     .Reservations[].Instances[]
-    | . as $instance
     | select(.State.Name == "running")
-    | select((first($instance.Tags[] | select(.Key == "elasticbeanstalk:environment-name")).Value ) == "my-app")
-    | select((first($instance.Tags[] | select(.Key == "env")).Value ) == "prod")
+    | select((first(.Tags[] | select(.Key == "env")).Value ) == "prod")
     | {
-        "Name": (first($instance.Tags[]? | select(.Key == "Name")).Value // "NoName"),
-        "InstanceId": $instance.InstanceId,
-        "InstanceType": $instance.InstanceType,
-        "State": $instance.State.Name,
-        "LaunchTime": $instance.LaunchTime,
-        "ImageId": $instance.ImageId,
-        "AvailabilityZone": $instance.Placement.AvailabilityZone,
-        "IamInstanceProfile": $instance.IamInstanceProfile.Arn,
-        "SecurityGroupNames": ([$instance.SecurityGroups[].GroupName] | sort | join(",")),
-        "SecurityGroupIds": ([$instance.SecurityGroups[].GroupId] | sort | join(",")),
-        "VpcId": $instance.VpcId,
-        "SubnetId": $instance.SubnetId,
-        "PrivateIpAddress": $instance.PrivateIpAddress,
-        "KeyName": $instance.KeyName,
-        "Tags": ([$instance.Tags[] | "\(.Key)=\(.Value)"] | sort | join("|")),
-        "StartSession": "aws ssm start-session --target \($instance.InstanceId)"
+        "Name": (first(.Tags[]? | select(.Key == "Name")).Value // "NoName"),
+        "InstanceId": .InstanceId,
+        "InstanceType": .InstanceType,
+        "State": .State.Name,
+        "LaunchTime": .LaunchTime,
+        "ImageId": .ImageId,
+        "AvailabilityZone": .Placement.AvailabilityZone,
+        "IamInstanceProfile": .IamInstanceProfile.Arn,
+        "SecurityGroupNames": ([.SecurityGroups[].GroupName] | sort | join(",")),
+        "SecurityGroupIds": ([.SecurityGroups[].GroupId] | sort | join(",")),
+        "VpcId": .VpcId,
+        "SubnetId": .SubnetId,
+        "PrivateIpAddress": .PrivateIpAddress,
+        "KeyName": .KeyName,
+        "Tags": ([.Tags[] | "\(.Key)=\(.Value)"] | sort | join("|")),
+        "StartSession": "aws ssm start-session --target \(.InstanceId)"
     }
 ]
 | sort_by(.ImageId, .InstanceType, .Name)
