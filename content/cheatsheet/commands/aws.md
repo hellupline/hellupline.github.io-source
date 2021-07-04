@@ -91,29 +91,35 @@ aws ec2 describe-addresses | jq --raw-output '
 
 ```bash
 aws ce get-cost-and-usage \
-    --time-period Start="$(date "+%Y-%m-01" -d "-1 Month")",End="$(date --date="$(date +'%Y-%m-01') - 1 second" -I)" \
+    --time-period Start=$(date "+%Y-%m-01"),End=$(date --date="$(date +'%Y-%m-01') + 1 month  - 1 second" -I) \
     --granularity MONTHLY \
-    --metrics UsageQuantity \
+    --metrics USAGE_QUANTITY BLENDED_COST  \
     --group-by Type=DIMENSION,Key=SERVICE \
 | jq --raw-output '
 [
     .ResultsByTime[].Groups[]
     | select((.Metrics.UsageQuantity.Amount | tonumber) > 0)
+    | select((.Metrics.BlendedCost.Amount | tonumber) > 0)
     | {
         "Name": (.Keys | join("|")),
-        "UsageQuantity": .Metrics.UsageQuantity.Amount
+        "BlendedCostAmmount": .Metrics.BlendedCost.Amount | tonumber,
+        "BlendedCostUnit": .Metrics.BlendedCost.Unit,
+        "UsageQuantityAmmount": .Metrics.UsageQuantity.Amount | tonumber,
     }
 ]
-| sort_by(.UsageQuantity, .Name)
+| sort_by(.BlendedCostAmmount, .Name)
 | reverse
 | [
     "Name",
-    "UsageQuantity"
+    "BlendedCostAmmount",
+    "BlendedCostUnit",
+    "UsageQuantityAmmount"
 ] as $cols
 | map(. as $row | $cols | map($row[.])) as $rows
 | $cols, $rows[]
 | @csv
 ' | column -t -s ","
+
 ```
 
 
