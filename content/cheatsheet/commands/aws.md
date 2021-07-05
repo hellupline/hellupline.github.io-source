@@ -92,36 +92,42 @@ aws ec2 describe-addresses | jq --raw-output '
 ```bash
 # Start=$(date "+%Y-%m-01" -d "-1 Month"),End=$(date --date="$(date +'%Y-%m-01') - 1 second" -I)
 # Start=$(date "+%Y-%m-01"),End=$(date --date="$(date +'%Y-%m-01') + 1 month  - 1 second" -I)
+# Type=DIMENSION,Key=LINKED_ACCOUNT Type=DIMENSION,Key=SERVICE Type=TAG,Key=owner
 aws ce get-cost-and-usage \
     --time-period "Start=$(date "+%Y-%m-01" -d "-1 Month"),End=$(date --date="$(date +'%Y-%m-01') - 1 second" -I)" \
     --granularity MONTHLY \
     --metrics USAGE_QUANTITY BLENDED_COST  \
-    --group-by Type=DIMENSION,Key=SERVICE \
+    --group-by Type=TAG,Key=owner Type=DIMENSION,Key=SERVICE \
 | jq --raw-output '
-[
-    .ResultsByTime[].Groups[]
+. as $root
+| [ $root.DimensionValueAttributes[] | { "Key": .Value, "Value": .Attributes } ] | from_entries as $dimension_attributes
+| [
+    $root.ResultsByTime[].Groups[]
     | select((.Metrics.UsageQuantity.Amount | tonumber) > 0)
     | select((.Metrics.BlendedCost.Amount | tonumber) > 0)
     | {
-        "Name": (.Keys | join("|")),
+        # "Account": $dimension_attributes[.Keys[0]].description,
+        "tag$owner": .Keys[0],
+        "Service": .Keys[1],
         "BlendedCostAmmount": .Metrics.BlendedCost.Amount | tonumber,
         "BlendedCostUnit": .Metrics.BlendedCost.Unit,
         "UsageQuantityAmmount": .Metrics.UsageQuantity.Amount | tonumber,
     }
 ]
-| sort_by(.BlendedCostAmmount, .Name)
+| sort_by(.["tag$owner"], .BlendedCostAmmount, .Name)
 | reverse
 | [
-    "Name",
+    # "Account",
+    "tag$owner",
+    "Service",
     "BlendedCostAmmount",
     "BlendedCostUnit",
     "UsageQuantityAmmount"
 ] as $cols
-| map(. as $row | $cols | map($row[.])) as $rows
+| map(. as $row | $cols | map($row[.] | tostring)) as $rows
 | $cols, $rows[]
 | @csv
 ' | column -t -s ","
-
 ```
 
 
