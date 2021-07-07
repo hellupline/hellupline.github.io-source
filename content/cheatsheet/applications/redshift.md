@@ -84,13 +84,37 @@ SELECT
 FROM
 	pg_user AS u
 CROSS JOIN
-    pg_namespace AS n
+	pg_namespace AS n
 WHERE
 	n.nspname NOT IN ('pg_internal', 'pg_toast', 'pg_catalog', 'admin', 'public')
 	AND n.nspname NOT LIKE 'pg_temp_%'
 	AND u.usename NOT IN ('admin')
 	AND u.usename NOT LIKE 'app_%'
 	AND has_schema_privilege (u.usename, n.nspname, 'usage')
+ORDER BY
+	u.usename ASC,
+	n.nspname ASC;
+```
+
+## user selectable tables
+```sql
+SELECT
+	u.usename,
+	n.nspname,
+	t.table_name,
+	has_table_privilege(u.usename, n.nspname || '.' || t.table_name, 'select') AS has_select
+FROM
+	pg_user AS u
+CROSS JOIN
+	pg_namespace AS n
+INNER JOIN
+	information_schema.tables t ON t.table_schema = n.nspname
+WHERE
+	n.nspname NOT IN ('pg_internal', 'pg_toast', 'pg_catalog', 'admin', 'public')
+	AND n.nspname NOT LIKE 'pg_temp_%'
+	AND u.usename NOT IN ('admin')
+	AND u.usename NOT LIKE 'app_%'
+	AND has_schema_privilege(u.usename, n.nspname, 'usage')
 ORDER BY
 	u.usename ASC,
 	n.nspname ASC;
