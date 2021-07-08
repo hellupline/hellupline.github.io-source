@@ -12,17 +12,19 @@ bookToc: true
 
 ```sql
 SELECT
-	FORMAT('SELECTR pg_terminate_backend(%d)', pid) AS "run to kill",
+	FORMAT('SELECTR pg_terminate_backend(%s)', pid) AS "run to kill",
 	pid AS "process ID",
 	usename AS "username",
 	client_addr AS "source ip",
-	EXTRACT(EPOCH FROM (DATE_TRUNC('second', now() - pg_stat_activity.query_start))) AS "duration in seconds",
+	EXTRACT(EPOCH FROM (DATE_TRUNC('second', now() - pg_stat_activity.query_start))) AS "duration",
 	state as "state",
-	TRIM(LEADING E'\n' FROM query) AS "query",  -- Adjusts query visualization in some softwares
+	TRIM(LEADING E'\n' FROM query) AS "query"  -- Adjusts query visualization in some softwares
 FROM
 	pg_stat_activity
 WHERE
-	state != 'idle';
+	state != 'idle'
+ORDER BY
+	duration DESC;
 ```
 
 
