@@ -119,3 +119,29 @@ ORDER BY
 	u.usename ASC,
 	n.nspname ASC;
 ```
+
+## table ownership
+```sql
+SELECT
+	n.nspname AS schema_name,
+	CASE
+		WHEN c.relkind = 'v' THEN
+		'view' ELSE'table' 
+	END AS table_type,
+	c.relname AS table_name,
+	pg_get_userbyid(c.relowner) AS table_owner,
+	d.description AS table_description 
+FROM
+	pg_class AS c 
+	LEFT JOIN pg_namespace n ON n.oid = c.relnamespace
+	LEFT JOIN pg_tablespace t ON t.oid = c.reltablespace
+	LEFT JOIN pg_description AS d ON ( d.objoid = c.oid AND d.objsubid = 0 ) 
+WHERE
+	c.relkind IN ( 'r', 'v' )
+	AND schema_name = 'my_schema' 
+	AND table_name = 'my_table'
+	AND table_owner = 'my_user'
+ORDER BY
+	n.nspname ASC,
+	c.relname ASC;
+```
