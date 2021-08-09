@@ -62,6 +62,46 @@ aws ec2 describe-instances | jq --raw-output '
 ```
 
 
+## list security groups usage
+
+```bash
+for AWS_REGION_NAME in $(aws --output json ec2 describe-regions | jq --raw-output '.Regions[].RegionName'); do
+    aws --output json --region="${AWS_REGION_NAME}" ec2 describe-network-interfaces --filters Name=group-id,Values='sg-DUMMY'
+done | jq --slurp '
+[
+    .[].NetworkInterfaces[]
+    | {
+        "Groups": ([.Groups[].GroupId] | sort | join(",")),
+        "Status": .Status,
+        "AvailabilityZone": .AvailabilityZone,
+        "SubnetId": .SubnetId,
+        "VpcId": .VpcId,
+        "PrivateIpAddress": .PrivateIpAddress,
+        "NetworkInterfaceId": .NetworkInterfaceId,
+        "InstanceId": .Attachment.InstanceId,
+        "AttachmentId": .Attachment.AttachmentId
+    }
+]
+| sort_by(.Groups, .InstanceId)
+| [
+        "Groups",
+        "Status",
+        "AvailabilityZone",
+        "SubnetId",
+        "VpcId",
+        "PrivateIpAddress",
+        "NetworkInterfaceId",
+        "InstanceId",
+        "AttachmentId"
+] as $cols
+| map(. as $row | $cols | map($row[.])) as $rows
+| $cols, $rows[]
+| @csv
+' | column -t -s ","
+
+```
+
+
 ## list elastic ips
 
 ```bash
