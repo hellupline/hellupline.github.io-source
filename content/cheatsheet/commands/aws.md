@@ -67,7 +67,7 @@ aws ec2 describe-instances | jq --raw-output '
 ```bash
 for AWS_REGION_NAME in $(aws --output json ec2 describe-regions | jq --raw-output '.Regions[].RegionName'); do
     aws --output json --region="${AWS_REGION_NAME}" ec2 describe-network-interfaces --filters Name=group-id,Values='sg-DUMMY'
-done | jq --slurp --raw-output '
+done | jq --raw-output --slurp '
 [
     .[].NetworkInterfaces[]
     | {
