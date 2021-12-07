@@ -34,6 +34,22 @@ GRANT SELECT on DATABASE.* TO 'user'@'%';
 SHOW GRANTS FOR 'user'@'%';
 ```
 
+```sql
+SELECT
+	* 
+FROM
+	information_schema.user_privileges 
+WHERE
+	PRIVILEGE_TYPE NOT IN (
+        'USAGE',
+        'SELECT'
+    ) 
+	AND GRANTEE NOT IN (
+        "'rdsadmin'@'localhost'",
+        "'rdsrepladmin'@'%'"
+    )
+```
+
 ## allow kill process on rds
 ```sql
 GRANT EXECUTE ON PROCEDURE `mysql`.`rds_kill_query` TO `operator`@`%`;
