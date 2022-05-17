@@ -31,33 +31,52 @@ ORDER BY
 ## show where a user has permissions
 
 ```sql
-SELECT
-	pg_tables.schemaname AS "schema_name",
-	pg_tables.tablename AS "table_name",
-	roles.kind AS "kind",
-	roles.name AS "name",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'select') AS "select",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'insert') AS "insert",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'update') AS "update",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'delete') AS "delete",
-	HAS_TABLE_PRIVILEGE(roles.name, pg_tables.schemaname || '.' || pg_tables.tablename, 'references') AS "references"
-FROM
-	pg_tables,
-	(
-		SELECT 'role' AS kind, rolname AS name FROM  pg_roles
-		UNION
-		SELECT 'user' AS kind, usename AS name FROM pg_user
-	) AS roles
+WITH 
+    tables AS (
+        SELECT 
+            catalog_name AS "catalog_name",
+            schema_name AS "schema_name",
+            tablename AS "table_name"
+        FROM 
+            information_schema.schemata
+        JOIN pg_tables 
+            ON schemata.schema_name = pg_tables.schemaname
+    ),
+    roles AS (
+        SELECT 'role' AS kind, rolname AS name FROM  pg_roles
+        UNION
+        SELECT 'user' AS kind, usename AS name FROM pg_user
+    ),
+    permissions AS (
+        SELECT
+            tables.catalog_name AS "catalog_name",
+            tables.schema_name AS "schema_name",
+            tables.table_name AS "table_name",
+            roles.kind AS "role_kind",
+            roles.name AS "role_name",
+            HAS_TABLE_PRIVILEGE(roles.name, tables.schema_name || '.' || tables.table_name, 'select') AS "has_select",
+            HAS_TABLE_PRIVILEGE(roles.name, tables.schema_name || '.' || tables.table_name, 'insert') AS "has_insert",
+            HAS_TABLE_PRIVILEGE(roles.name, tables.schema_name || '.' || tables.table_name, 'update') AS "has_update",
+            HAS_TABLE_PRIVILEGE(roles.name, tables.schema_name || '.' || tables.table_name, 'delete') AS "has_delete",
+            HAS_TABLE_PRIVILEGE(roles.name, tables.schema_name || '.' || tables.table_name, 'references') AS "has_references"
+        FROM
+            tables, roles
+        ORDER BY
+            tables.schema_name ASC,
+            tables.table_name ASC,
+            roles.kind ASC,
+            roles.name ASC
+    )
+SELECT 
+    *
+FROM 
+    permissions 
 WHERE
-	pg_tables.schemaname = 'public' AND
-	pg_tables.tablename IN ('my_table', 'my_other_table') AND
-	roles.name in ('app_production', 'app_ro', 'app_rw', 'root')
-ORDER BY
-	pg_tables.schemaname ASC,
-	pg_tables.tablename ASC,
-	roles.kind ASC,
-	roles.name ASC;
-
+    catalog_name IN ('my_app') AND
+    schema_name NOT IN ('pg_catalog') AND
+    table_name IN ('my_table', 'my_other_table') AND
+    role_name in ('app_reader') AND 
+    has_select = false
 ```
 
 
