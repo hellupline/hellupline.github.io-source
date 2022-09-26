@@ -11,17 +11,25 @@ bookToc: true
 
 ```sql
 SELECT
-    CONCAT("CALL mysql.rds_kill_query('" , ID, "');") as run_to_kill,
-    ID, USER, DB, STATE, TIME, INFO
+    CONCAT("CALL mysql.rds_kill_query('" , ID, "');") AS "run_to_kill",
+    pl.ID AS "id",
+    pl.USER AS "user",
+    pl.DB AS "database",
+    pl.COMMAND AS "command",
+    pl.STATE AS "state",
+    trx.trx_operation_state AS "operation_state",
+    trx.trx_isolation_level AS "isolation_level",
+    pl.TIME / 60 AS "time_minute",
+    pl.INFO AS "text",
+		trx.*
 FROM
-    information_schema.processlist
+    information_schema.PROCESSLIST AS pl
+RIGHT OUTER JOIN
+    information_schema.INNODB_TRX AS trx ON pl.ID = trx.trx_mysql_thread_id
 WHERE
-    COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
-    AND USER NOT IN ('system user')
-    AND SUBSTR(USER, 1, 4) != 'app_'
+    pl.COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
 ORDER BY
-    TIME DESC;
-```
+    pl.TIME DESC```
 
 ## create user
 ```sql
