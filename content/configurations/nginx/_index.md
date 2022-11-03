@@ -1,10 +1,8 @@
 ---
-title: nginx
-weight: 110
-type: docs
+title: 'nginx'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

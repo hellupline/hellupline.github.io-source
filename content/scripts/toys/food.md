@@ -1,11 +1,6 @@
 ---
-title: food
-weight: 110
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'food'
 
 ---
 
-{{< code file="/files/scripts/toys/food" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/food.sh" language="sh" download="true" >}}

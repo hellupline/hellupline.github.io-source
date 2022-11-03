@@ -1,11 +1,6 @@
 ---
-title: cached
-weight: 190
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'cached'
 
 ---
 
-{{< code file="/files/scripts/utils/cached" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/cached.sh" language="sh" download="true" >}}

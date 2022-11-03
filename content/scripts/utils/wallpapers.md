@@ -1,11 +1,6 @@
 ---
-title: wallpapers
-weight: 270
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'wallpapers'
 
 ---
 
-{{< code file="/files/scripts/utils/wallpapers" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/wallpapers.sh" language="sh" download="true" >}}

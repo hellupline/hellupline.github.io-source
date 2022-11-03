@@ -1,10 +1,5 @@
 ---
-title: namespace
-weight: 260
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'namespace'
 
 ---
 

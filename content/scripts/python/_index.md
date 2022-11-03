@@ -1,10 +1,8 @@
 ---
-title: python
-weight: 120
-type: docs
+title: 'python'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

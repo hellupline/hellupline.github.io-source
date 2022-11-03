@@ -1,11 +1,6 @@
 ---
-title: tabular
-weight: 200
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'tabular'
 
 ---
 
-{{< code file="/files/scripts/utils/tabular" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/tabular.sh" language="sh" download="true" >}}

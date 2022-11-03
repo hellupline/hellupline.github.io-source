@@ -1,10 +1,5 @@
 ---
-title: volume-local-disk
-weight: 240
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'volume-local-disk'
 
 ---
 

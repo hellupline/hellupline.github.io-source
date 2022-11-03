@@ -1,11 +1,6 @@
 ---
-title: pipesx
-weight: 150
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'pipesx'
 
 ---
 
-{{< code file="/files/scripts/toys/pipesx" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/pipesx.sh" language="sh" download="true" >}}

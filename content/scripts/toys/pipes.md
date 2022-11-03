@@ -1,11 +1,6 @@
 ---
-title: pipes
-weight: 140
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'pipes'
 
 ---
 
-{{< code file="/files/scripts/toys/pipes" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/pipes.sh" language="sh" download="true" >}}

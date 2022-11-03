@@ -1,10 +1,5 @@
 ---
-title: static-files
-weight: 160
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'static-files'
 
 ---
 

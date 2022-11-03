@@ -1,10 +1,5 @@
 ---
-title: configmap
-weight: 170
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'configmap'
 
 ---
 

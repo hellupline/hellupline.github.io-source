@@ -1,11 +1,6 @@
 ---
-title: make-selfsign-certificate
-weight: 110
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'make-selfsign-certificate'
 
 ---
 
-{{< code file="/files/scripts/utils/make-selfsign-certificate" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/make-selfsign-certificate.sh" language="sh" download="true" >}}

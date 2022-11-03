@@ -1,11 +1,6 @@
 ---
-title: ghosts
-weight: 190
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'ghosts'
 
 ---
 
-{{< code file="/files/scripts/toys/ghosts" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/ghosts.sh" language="sh" download="true" >}}

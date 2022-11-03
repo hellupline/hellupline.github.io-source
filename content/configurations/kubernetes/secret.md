@@ -1,10 +1,5 @@
 ---
-title: secret
-weight: 180
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'secret'
 
 ---
 

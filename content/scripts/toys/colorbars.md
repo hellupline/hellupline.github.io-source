@@ -1,11 +1,6 @@
 ---
-title: colorbars
-weight: 160
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'colorbars'
 
 ---
 
-{{< code file="/files/scripts/toys/colorbars" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/colorbars.sh" language="sh" download="true" >}}

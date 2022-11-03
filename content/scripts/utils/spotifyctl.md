@@ -1,11 +1,6 @@
 ---
-title: spotifyctl
-weight: 260
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'spotifyctl'
 
 ---
 
-{{< code file="/files/scripts/utils/spotifyctl" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/spotifyctl.sh" language="sh" download="true" >}}

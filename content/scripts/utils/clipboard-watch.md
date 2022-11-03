@@ -1,11 +1,6 @@
 ---
-title: clipboard-watch
-weight: 180
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'clipboard-watch'
 
 ---
 
-{{< code file="/files/scripts/utils/clipboard-watch" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/clipboard-watch.sh" language="sh" download="true" >}}

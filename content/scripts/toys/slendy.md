@@ -1,11 +1,6 @@
 ---
-title: slendy
-weight: 230
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'slendy'
 
 ---
 
-{{< code file="/files/scripts/toys/slendy" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/slendy.sh" language="sh" download="true" >}}

@@ -1,11 +1,6 @@
 ---
-title: utcnow
-weight: 210
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'utcnow'
 
 ---
 
-{{< code file="/files/scripts/utils/utcnow" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/utcnow.sh" language="sh" download="true" >}}

@@ -1,10 +1,5 @@
 ---
-title: volume-cloud
-weight: 250
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'volume-cloud'
 
 ---
 

@@ -1,11 +1,6 @@
 ---
-title: skull
-weight: 220
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'skull'
 
 ---
 
-{{< code file="/files/scripts/toys/skull" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/skull.sh" language="sh" download="true" >}}

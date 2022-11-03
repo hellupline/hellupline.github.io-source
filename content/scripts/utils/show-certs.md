@@ -1,11 +1,6 @@
 ---
-title: show-certs
-weight: 140
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'show-certs'
 
 ---
 
-{{< code file="/files/scripts/utils/show-certs" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/show-certs.sh" language="sh" download="true" >}}

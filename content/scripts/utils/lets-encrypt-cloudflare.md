@@ -1,11 +1,6 @@
 ---
-title: lets-encrypt-cloudflare
-weight: 160
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'lets-encrypt-cloudflare'
 
 ---
 
-{{< code file="/files/scripts/utils/lets-encrypt-cloudflare" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/lets-encrypt-cloudflare.sh" language="sh" download="true" >}}

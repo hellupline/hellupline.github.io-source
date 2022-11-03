@@ -1,10 +1,5 @@
 ---
-title: cronjob
-weight: 130
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'cronjob'
 
 ---
 

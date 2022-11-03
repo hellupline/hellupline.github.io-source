@@ -1,10 +1,8 @@
 ---
-title: utils
-weight: 110
-type: docs
+title: 'utils'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

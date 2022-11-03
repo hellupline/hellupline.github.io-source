@@ -1,10 +1,5 @@
 ---
-title: todo
-weight: 900
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'todo'
 
 ---
 

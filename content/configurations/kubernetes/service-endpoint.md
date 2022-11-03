@@ -1,10 +1,5 @@
 ---
-title: service-endpoint
-weight: 200
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'service-endpoint'
 
 ---
 

@@ -1,11 +1,6 @@
 ---
-title: play-random
-weight: 250
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'play-random'
 
 ---
 
-{{< code file="/files/scripts/utils/play-random" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/play-random.sh" language="sh" download="true" >}}

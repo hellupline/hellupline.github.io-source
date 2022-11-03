@@ -1,10 +1,8 @@
 ---
-title: scripts
-weight: 130
-type: docs
+title: 'scripts'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

@@ -1,11 +1,6 @@
 ---
-title: screenshot
-weight: 170
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'screenshot'
 
 ---
 
-{{< code file="/files/scripts/utils/screenshot" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/screenshot.sh" language="sh" download="true" >}}

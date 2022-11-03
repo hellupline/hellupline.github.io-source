@@ -1,10 +1,8 @@
 ---
-title: articles
-weight: 110
-type: docs
+title: 'articles'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

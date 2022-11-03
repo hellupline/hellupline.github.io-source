@@ -1,10 +1,5 @@
 ---
-title: rbac-cluster-read-only
-weight: 290
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'rbac-cluster-read-only'
 
 ---
 

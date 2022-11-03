@@ -1,0 +1,58 @@
+baseURL = 'https://hellupline.dev/'
+title = 'hellupline notes'
+languageCode = 'en-us'
+themesDir = 'themes'
+theme = 'book'
+disableKinds = ['taxonomy', 'taxonomyTerm']
+enableGitInfo = true
+disablePathToLower = false
+
+# googleAnalytics = 'UA-147048049-1'
+
+# pygmentsStyle = 'monokailight'
+# pygmentsCodeFences = true
+# pygmentsUseClasses = false
+
+[markup]
+    [markup.tableOfContents]
+        startLevel = 1
+    [markup.goldmark.renderer]
+        unsafe = true
+    [markup.highlight]
+        anchorLineNos = false
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ''
+        lineAnchors = ''
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        noHl = false
+        style = 'monokailight'
+        tabWidth = 4
+
+[languages]
+    [languages.en]
+        languageName = 'English'
+        contentDir = 'content'
+        weight = 1
+
+[menu]
+# [[menu.before]]
+[[menu.after]]
+    name = "Github"
+    url = "https://github.com/hellupline"
+    weight = 10
+
+[params]
+    BookTheme = 'light'
+    BookToC = 3
+    # BookLogo = 'logo.png' # /static/logo.png
+    BookSection = '*' # 'docs'
+    BookRepo = 'https://github.com/hellupline/hellupline.github.io-source'
+    BookCommitPath = 'commit'
+    BookEditPath = 'edit/master/content'
+    BookDateFormat = 'Jan 2, 2006'
+    BookSearch = true
+    BookComments = false

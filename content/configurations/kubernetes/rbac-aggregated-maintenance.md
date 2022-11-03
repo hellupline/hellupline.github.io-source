@@ -1,10 +1,5 @@
 ---
-title: rbac-aggregated-maintenance
-weight: 320
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'rbac-aggregated-maintenance'
 
 ---
 

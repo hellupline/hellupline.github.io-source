@@ -1,10 +1,5 @@
 ---
-title: rbac-namespace-full-access
-weight: 300
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'rbac-namespace-full-access'
 
 ---
 

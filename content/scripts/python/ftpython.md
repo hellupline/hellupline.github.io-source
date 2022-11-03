@@ -1,11 +1,6 @@
 ---
-title: ftpython
-weight: 110
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'ftpython'
 
 ---
 
-{{< code file="/files/scripts/python/ftpython" language="python3" download="true" >}}
+{{< code file="/files/scripts/python/ftpython.py" language="python3" download="true" >}}

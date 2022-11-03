@@ -1,10 +1,8 @@
 ---
-title: golang
-weight: 130
-type: docs
+title: 'golang'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

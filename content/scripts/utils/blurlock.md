@@ -1,11 +1,6 @@
 ---
-title: blurlock
-weight: 230
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'blurlock'
 
 ---
 
-{{< code file="/files/scripts/utils/blurlock" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/blurlock.sh" language="sh" download="true" >}}

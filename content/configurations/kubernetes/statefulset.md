@@ -1,10 +1,5 @@
 ---
-title: statefulset
-weight: 150
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'statefulset'
 
 ---
 

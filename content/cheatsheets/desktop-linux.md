@@ -1,0 +1,127 @@
+---
+title: 'desktop-linux'
+
+---
+
+
+## add groups to user
+
+```bash
+usermod --append --groups 'docker' 'hellupline'
+newgrp 'docker'
+```
+
+
+## set default browser
+
+```bash
+# gio mime x-scheme-handler/https brave-browser.desktop
+# gio mime x-scheme-handler/http brave-browser.desktop
+xdg-settings set default-url-scheme-handler https brave-browser.desktop
+xdg-settings set default-url-scheme-handler http brave-browser.desktop
+xdg-settings set default-web-browser brave-browser.desktop
+xdg-mime default brave-browser.desktop x-scheme-handler/https x-scheme-handler/http
+```
+
+
+## notifications
+
+```bash
+notify-send --urgency=critical --app-name=hello-nurse TITLE "BODY"
+```
+
+
+## clipboard
+
+```bash
+xclip -out -selection clipboard > output.txt
+xclip -in -selection clipboard < input.txt
+```
+
+
+## sudo
+
+```bash
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/99_wheel_group_nopass
+```
+
+
+## disable pcspkr
+
+```bash
+echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/nobeep.conf
+```
+
+
+## hardware clock
+
+```bash
+sudo timedatectl set-local-rtc 0
+systemctl enable --now systemd-timesyncd.service
+```
+
+
+## manjaro packates
+
+```bash
+pamac install \
+	aria2 \
+	aws-cli \
+	brave-browser \
+	byobu \
+	dnsutils \
+	docker \
+	docker-compose \
+	firefox \
+	gnome-terminal \
+	gnumeric \
+	hugo \
+	keepassxc \
+	kubectl \
+	lib32-pipewire \
+	lutris \
+	maim \
+	manjaro-pipewire \
+	minetest \
+	mpv \
+	nmap \
+	obs-studio libva-intel-driver \
+	pavucontrol \
+	pipewire-pulse \
+	polybar \
+	python-pip \
+	redshift \
+	rofi \
+	seahorse \
+	steam \
+	stow \
+	stress \
+	terraform \
+	wine \
+	winetricks \
+	wmctrl \
+	xdotool \
+	xorg-xwininfo \
+	yt-dlp \
+    feh \
+    gnome-disk-utility \
+    gsmartcontrol \
+    ipython \
+    jq \
+    neovim \
+    nodejs \
+    npm \
+    numlockx \
+    pipewire-x11-bell \
+    python-pynvim \
+    whois
+pamac build \
+	aws-sam-cli \
+	aws-session-manager-plugin \
+	minecraft-launcher \
+    ijq
+flatpak install flathub \
+	com.discordapp.Discord \
+	com.slack.Slack \
+	com.spotify.Client
+```

@@ -1,11 +1,6 @@
 ---
-title: lets-encrypt-cname
-weight: 150
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'lets-encrypt-cname'
 
 ---
 
-{{< code file="/files/scripts/utils/lets-encrypt-cname" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/lets-encrypt-cname.sh" language="sh" download="true" >}}

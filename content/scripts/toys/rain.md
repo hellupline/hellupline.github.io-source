@@ -1,11 +1,6 @@
 ---
-title: rain
-weight: 170
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'rain'
 
 ---
 
-{{< code file="/files/scripts/toys/rain" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/rain.sh" language="sh" download="true" >}}

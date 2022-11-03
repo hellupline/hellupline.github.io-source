@@ -1,11 +1,6 @@
 ---
-title: make-cacert
-weight: 120
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'make-cacert'
 
 ---
 
-{{< code file="/files/scripts/utils/make-cacert" language="sh" download="true" >}}
+{{< code file="/files/scripts/utils/make-cacert.sh" language="sh" download="true" >}}

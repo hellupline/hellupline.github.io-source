@@ -1,10 +1,5 @@
 ---
-title: kubectl-namespace-list
-weight: 120
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'kubectl-namespace-list'
 
 ---
 

@@ -1,11 +1,6 @@
 ---
-title: pacman-colors
-weight: 180
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'pacman-colors'
 
 ---
 
-{{< code file="/files/scripts/toys/pacman-colors" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/pacman-colors.sh" language="sh" download="true" >}}

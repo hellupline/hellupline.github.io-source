@@ -1,11 +1,6 @@
 ---
-title: dna
-weight: 130
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'dna'
 
 ---
 
-{{< code file="/files/scripts/toys/dna" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/dna.sh" language="sh" download="true" >}}

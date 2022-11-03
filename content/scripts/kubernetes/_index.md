@@ -1,10 +1,8 @@
 ---
-title: kubernetes
-weight: 100
-type: docs
+title: 'kubernetes'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---

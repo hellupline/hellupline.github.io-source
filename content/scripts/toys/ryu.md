@@ -1,11 +1,6 @@
 ---
-title: ryu
-weight: 200
-type: docs
-bookCollapseSection: false
-bookFlatSection: false
-bookToc: false
+title: 'ryu'
 
 ---
 
-{{< code file="/files/scripts/toys/ryu" language="sh" download="true" >}}
+{{< code file="/files/scripts/toys/ryu.sh" language="sh" download="true" >}}

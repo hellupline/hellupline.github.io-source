@@ -1,10 +1,8 @@
 ---
-title: configurations
-weight: 140
-type: docs
+title: 'configurations'
 headless: true
-bookCollapseSection: false
 bookFlatSection: false
-bookToc: false
+bookCollapseSection: false
+bookToC: false
 
 ---
