@@ -13,6 +13,7 @@ disablePathToLower = false
 # pygmentsCodeFences = true
 # pygmentsUseClasses = false
 
+
 [markup]
     [markup.tableOfContents]
         startLevel = 1
@@ -49,7 +50,7 @@ disablePathToLower = false
     BookTheme = 'light'
     BookToC = 3
     # BookLogo = 'logo.png' # /static/logo.png
-    BookSection = '*' # 'docs'
+    BookSection = 'docs'
     BookRepo = 'https://github.com/hellupline/hellupline.github.io-source'
     BookCommitPath = 'commit'
     BookEditPath = 'edit/master/content'
