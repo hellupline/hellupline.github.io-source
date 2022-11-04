@@ -4,6 +4,13 @@ title: 'utils'
 ---
 
 
+## file allocation
+
+```bash
+fallocate --length $((20*1024**2)) luks-volume.data
+```
+
+
 ## math in shell
 
 ```bash
