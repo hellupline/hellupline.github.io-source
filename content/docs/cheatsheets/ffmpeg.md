@@ -26,9 +26,9 @@ ffmpeg \
         [2][3]amerge=inputs=2,pan=stereo|FL<c0+c1|FR<c2+c3[a]
     ' \
     -map '[v]:v:0' -map '[a]:a:0' \
-    -c:v libx264 -c:a aac \
+    -c:v libx265 -c:a aac \
     -pix_fmt yuv444p -crf 0 -cq 10 -qp 0 \
-    -preset ultrafast -tune zerolatency \
+    -preset faster -tune zerolatency \
     -f mpegts udp://127.0.0.1:2000
 ```
 
