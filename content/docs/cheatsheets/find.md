@@ -13,6 +13,7 @@ find ./ -newermt '2022-11-03 17:30' -not -newermt '2022-11-03 17:30'
 find ./ -mtime +5 # modified time more than 5 days ago
 find ./ -mtime -5 # modified time less than 5 days ago
 find ./ -mtime 5 # modified time exact than 5 days ago
+find ./ -daystart -mtime 1 # use start of day as base instead of 24 hours
 ```
 
 
