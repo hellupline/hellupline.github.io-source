@@ -107,3 +107,10 @@ find ./ -mindepth 2 -maxdepth 5
 ```bash
 find "${PWD}"
 ```
+
+
+## regex
+
+```bash
+find ./ -regextype posix-egrep -regex '.*\.(avi|mkv|mp4|wmv|flv|webm)$'
+```
