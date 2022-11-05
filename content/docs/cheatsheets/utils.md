@@ -52,6 +52,8 @@ python -m json.tool
 ```bash
 rsync \
     --verbose \
+    --no-inc-recursive \
+    --info=progress2 \
     --human-readable \
     --progress \
     --stats \
@@ -78,4 +80,14 @@ date '+%s'
 # Relative
 date --date="next Friday"
 date --date="2 days ago"
+```
+
+
+## filesystem
+
+```bash
+# label = kiwi-storage-v2, reserved 0%
+mkfs.ext4 -L kiwi-storage-v2 -m 0 /dev/mapper/kiwi-storage-v2
+# get filesystem data
+tune2fs -l /dev/mapper/kiwi-storage-v2
 ```
