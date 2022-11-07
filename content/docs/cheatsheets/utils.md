@@ -30,7 +30,7 @@ cat /etc/passwd \
 df --print-type --human-readable \
 | sed \
     --regexp-extended \
-    --expression='s#\s+# #g' \
+    --expression='s#\s{2,}# #g' \
     --expression='1d' \
 | sort \
     --field-separator=' ' \
@@ -47,13 +47,31 @@ df --print-type --human-readable \
 ```
 
 ```bash
-# tree mode, parent field 2, object id field 1, tree object field 3
-echo -e '1 0 A\n2 1 AA\n3 1 AB\n4 2 AAA\n5 2 AAB' | column --tree-id 1 --tree-parent 2 --tree 3
-# 1  0  A
-# 2  1  ├─AA
-# 4  2  │ ├─AAA
-# 5  2  │ └─AAB
-# 3  1  └─AB
+# `sed`, `grep` and `sort` are for demonstration, not required for `column`
+echo '
+    1 0 X A
+    2 1 Y AA
+    3 1 Z AB
+    4 2 W AAA
+    5 2 @ AAB
+' \
+| sed --regexp-extended --expression='s#\s{2,}# #g' \
+| grep --invert-match '^$' \
+| sort --field-separator=' ' --key='2,2n' --key='1,1n' \
+| column \
+    --table \
+    --table-columns='ID,PARENT,NAME,DATA' \
+    --table-hide='ID,PARENT' \
+    --tree-id='ID' \
+    --tree-parent='PARENT' \
+    --tree='DATA' \
+| less --chop-long-lines --RAW-CONTROL-CHARS
+# NAME  DATA
+# X     A
+# Y     ├─AA
+# W     │ ├─AAA
+# @     │ └─AAB
+# Z     └─AB
 ```
 
 
