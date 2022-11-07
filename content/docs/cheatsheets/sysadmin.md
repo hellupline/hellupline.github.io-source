@@ -83,7 +83,27 @@ systemctl list-units --type=service --state=running --all  # service --status-al
 journalctl --follow --since=today  # tail --follow /var/log/{messages,syslog}
 journalctl --dmesg
 journalctl --unit SERVICE
+journalctl --grep 'fail|error|fatal'
+journalctl --output json
 
 journalctl --list-boots
 journalctl --boot BOOT_ID
+```
+
+
+## process memory
+
+```bash
+ps -C 'firefox' -O rss \
+| awk '
+    {
+        count ++; sum += $2
+    }
+    END {
+        count --
+        print "Number of processes:\t\t\t",             count
+        print "Average memory usage per process:\t",    sum/1024/count, "MB"
+        print "Total memory usage:\t\t\t",              sum/1024,       "MB"
+    }
+'
 ```
