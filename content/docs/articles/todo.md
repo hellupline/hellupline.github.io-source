@@ -9,3 +9,5 @@ title: 'todo'
     - graphicsmagick
     - ffmpeg
     - sftp
+    - nmcli
+    - qemu

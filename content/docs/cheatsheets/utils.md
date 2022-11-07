@@ -4,11 +4,56 @@ title: 'utils'
 ---
 
 
-## sort
+## column
 
 ```bash
-# sort by key3 human, key1 normal, key2 numeric reverse, separated by space, unique
-sort --field-separator=' ' --unique --key='3,3h' --key='1,1' --key='2,2nr'
+sed 's/#.*//' /etc/fstab | column --table --table-columns='SOURCE,TARGET,TYPE' --table-hide='-'
+```
+
+```bash
+cat /etc/passwd \
+| sort \
+    --field-separator=':' \
+    --key='3,3n' \
+    --key='4,4n' \
+| column \
+    --separator=':' \
+    --table \
+    --table-name='etc-passwd' \
+    --table-columns='USERNAME,PASS,UID,GID,NAME,HOMEDIR,SHELL' \
+    --table-right='UID,GID' \
+    --table-hide='PASS' \
+| less --chop-long-lines --RAW-CONTROL-CHARS
+```
+
+```bash
+df --print-type --human-readable \
+| sed \
+    --regexp-extended \
+    --expression='s#\s+# #g' \
+    --expression='1d' \
+| sort \
+    --field-separator=' ' \
+    --key '3,3h' \
+    --key='4,4h' \
+    --key='5,5h' \
+    --key='7,7' \
+    --key='2,2' \
+    --key='1,1' \
+| column \
+    --table \
+    --table-columns='Filesystem,Type,Size,Used,Avail,Use%,Mounted on' \
+| less --chop-long-lines --RAW-CONTROL-CHARS
+```
+
+```bash
+# tree mode, parent field 2, object id field 1, tree object field 3
+echo -e '1 0 A\n2 1 AA\n3 1 AB\n4 2 AAA\n5 2 AAB' | column --tree-id 1 --tree-parent 2 --tree 3
+# 1  0  A
+# 2  1  ├─AA
+# 4  2  │ ├─AAA
+# 5  2  │ └─AAB
+# 3  1  └─AB
 ```
 
 
