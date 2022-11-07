@@ -107,27 +107,6 @@ python -m json.tool
 ```
 
 
-## rsync
-
-```bash
-rsync \
-    --verbose \
-    --no-inc-recursive \
-    --info=progress2 \
-    --human-readable \
-    --progress \
-    --stats \
-    --partial \
-    --archive \
-    --exclude 'stuff/_data' \
-    -- \
-    'SOURCE_OBJECT_1' \
-    'SOURCE_OBJECT_2' \
-    'SOURCE_OBJECT_3' \
-    'TARGET'
-```
-
-
 ## file allocation
 
 ```bash
