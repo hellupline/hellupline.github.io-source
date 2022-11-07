@@ -13,4 +13,8 @@ submodule-init:
 
 .PHONY: hugo
 hugo:
-	curl -SsL https://github.com/gohugoio/hugo/releases/download/v0.63.2/hugo_extended_0.63.2_Linux-64bit.tar.gz | tar -xzf- -C ~/.bin/
+	curl -SsL https://github.com/gohugoio/hugo/releases/download/v0.105.0/hugo_extended_0.105.0_Linux-64bit.tar.gz | tar -vxzf- -C ~/.bin/ -- hugo
+
+.PHONY: hugo-mac
+hugo-mac:
+	curl -SsL https://github.com/gohugoio/hugo/releases/download/v0.105.0/hugo_0.105.0_darwin-universal.tar.gz | tar -vxzf- -C ~/.bin/ -- hugo
