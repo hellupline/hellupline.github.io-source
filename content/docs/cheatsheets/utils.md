@@ -143,3 +143,11 @@ mkfs.ext4 -L kiwi-storage-v2 -m 0 /dev/mapper/kiwi-storage-v2
 # get filesystem data
 tune2fs -l /dev/mapper/kiwi-storage-v2
 ```
+
+
+## download using headless chrome
+
+```bash
+# google-chrome-stable
+brave --headless --dump-dom --disable-gpu 'https://hellupline.dev' 2> /dev/null
+```
