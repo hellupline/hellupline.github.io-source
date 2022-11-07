@@ -4,10 +4,26 @@ title: 'utils'
 ---
 
 
-## file allocation
+## sort
 
 ```bash
-fallocate --length $((20*1024**2)) luks-volume.data
+# sort by key3 human, key1 normal, key2 numeric reverse, separated by space, unique
+sort --field-separator=' ' --unique --key='3,3h' --key='1,1' --key='2,2nr'
+```
+
+
+## date
+
+```bash
+# RFC-3339
+date --date='1991-01-22 18:00:00 -0300'
+date --rfc-3339=seconds
+# Timestamp
+date --date='@664578000'
+date '+%s'
+# Relative
+date --date="next Friday"
+date --date="2 days ago"
 ```
 
 
@@ -31,7 +47,6 @@ echo ${?}
 ```bash
 sudo python -m smtpd -n -c DebuggingServer localhost:25
 ```
-
 
 ## simple http server
 
@@ -68,18 +83,10 @@ rsync \
 ```
 
 
-## date
+## file allocation
 
 ```bash
-# RFC-3339
-date --date='1991-01-22 18:00:00 -0300'
-date --rfc-3339=seconds
-# Timestamp
-date --date='@664578000'
-date '+%s'
-# Relative
-date --date="next Friday"
-date --date="2 days ago"
+fallocate --length $((20*1024**2)) luks-volume.data
 ```
 
 
