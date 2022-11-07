@@ -87,6 +87,13 @@ echo ${?}
 ```
 
 
+## get line by range
+
+```bash
+echo -e 'aaaa\nbbbb\ncccc\ndddd\neeee' | sed --quiet --expression='2,3p;4q'
+```
+
+
 ## simple smtp debug server
 
 ```bash

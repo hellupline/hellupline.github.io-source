@@ -11,6 +11,13 @@ ssh-keygen -t rsa -b 4096 -C "me@mail.com"
 ```
 
 
+## shell through bastion
+
+```bash
+ssh -J me@reachable.com me@unreacheable.com
+```
+
+
 ## reach server behind bastion
 
 ```bash
