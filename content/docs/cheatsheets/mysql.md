@@ -9,6 +9,7 @@ title: 'mysql'
 ```sql
 SELECT
     CONCAT("CALL mysql.rds_kill_query('" , ID, "');") AS "run_to_kill",
+    @@hostname AS "hostname",
     pl.ID AS "id",
     pl.USER AS "user",
     pl.DB AS "database",
