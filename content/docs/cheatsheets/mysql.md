@@ -20,7 +20,7 @@ SELECT
     pl.TIME / 60 AS "time_minute",
     pl.INFO AS "text"
 FROM information_schema.PROCESSLIST AS pl
-RIGHT OUTER JOIN information_schema.INNODB_TRX AS trx ON pl.ID = trx.trx_mysql_thread_id
+LEFT OUTER JOIN information_schema.INNODB_TRX AS trx ON pl.ID = trx.trx_mysql_thread_id
 WHERE pl.COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
 ORDER BY pl.TIME DESC;
 ```
