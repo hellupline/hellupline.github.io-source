@@ -4,6 +4,52 @@ title: 'aws'
 ---
 
 
+## compare 2 rds db cluster parameter group
+
+```python
+import boto3
+from pprint import pprint
+
+rds = boto3.client('rds')
+paginator = rds.get_paginator('describe_db_cluster_parameters')
+a = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-a')
+    for parameter in page['Parameters']
+)
+b = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-b')
+    for parameter in page['Parameters']
+)
+pprint(a - b)
+pprint(b - a)
+```
+
+
+## compare 2 rds db parameter group
+
+```python
+import boto3
+from pprint import pprint
+
+rds = boto3.client('rds')
+paginator = rds.get_paginator('describe_db_parameters')
+a = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBParameterGroupName='parameter-group-a')
+    for parameter in page['Parameters']
+)
+b = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBParameterGroupName='parameter-group-b')
+    for parameter in page['Parameters']
+)
+pprint(a - b)
+pprint(b - a)
+```
+
+
 ## describe ec2 as csv
 
 filter by environment==production beanstalk:environment-name==my-app
