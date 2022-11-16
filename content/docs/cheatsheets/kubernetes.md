@@ -31,6 +31,7 @@ kubectl apply --filename https://raw.githubusercontent.com/rancher/local-path-pr
 
 # Cert Manager
 kubectl apply --filename https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.crds.yaml
+kubectl apply --filename https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.yaml
 
 # Proxy
 kubectl proxy
