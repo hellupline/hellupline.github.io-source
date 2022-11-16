@@ -12,6 +12,8 @@ title: 'kubernetes'
 
 [Local Path Provisioner Repository](https://github.com/rancher/local-path-provisioner)
 
+[Cert Manager Repository](https://github.com/cert-manager/cert-manager)
+
 [Proxied Dashboard](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/)
 
 [Official Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
@@ -26,6 +28,9 @@ kubectl get --output jsonpath='{.status.conditions[*].message}' apiservice v1bet
 
 # Local Path Provisioner
 kubectl apply --filename https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.23/deploy/local-path-storage.yaml
+
+# Cert Manager
+kubectl apply --filename https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.crds.yaml
 
 # Proxy
 kubectl proxy
