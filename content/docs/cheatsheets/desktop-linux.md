@@ -4,6 +4,36 @@ title: 'desktop-linux'
 ---
 
 
+## seahorse keyring
+
+```bash
+secret-tool store --label='App' app username
+secret-tool lookup app username
+```
+
+
+## notifications
+
+```bash
+notify-send --urgency=critical --app-name=hello-nurse TITLE "BODY"
+```
+
+
+## clipboard
+
+```bash
+xclip -out -selection clipboard > output.txt
+xclip -in -selection clipboard < input.txt
+```
+
+
+## turn off display
+
+```bash
+xset dpms force suspend
+```
+
+
 ## send clicks to window
 
 ```bash
@@ -20,21 +50,6 @@ done
 ```
 
 
-## turn off display
-
-```bash
-xset dpms force suspend
-```
-
-
-## add groups to user
-
-```bash
-usermod --append --groups 'docker' 'hellupline'
-newgrp 'docker'
-```
-
-
 ## set default browser
 
 ```bash
@@ -47,18 +62,11 @@ xdg-mime default brave-browser.desktop x-scheme-handler/https x-scheme-handler/h
 ```
 
 
-## notifications
+## add groups to user
 
 ```bash
-notify-send --urgency=critical --app-name=hello-nurse TITLE "BODY"
-```
-
-
-## clipboard
-
-```bash
-xclip -out -selection clipboard > output.txt
-xclip -in -selection clipboard < input.txt
+usermod --append --groups 'docker' 'hellupline'
+newgrp 'docker'
 ```
 
 
@@ -129,12 +137,14 @@ pamac install \
     feh \
     gnome-disk-utility \
     gsmartcontrol \
+    helm \
     ipython \
     jq \
     neovim \
     nodejs \
     npm \
     numlockx \
+    openbsd-netcat \
     pipewire-x11-bell \
     python-pynvim \
     whois

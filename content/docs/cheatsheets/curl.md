@@ -61,9 +61,12 @@ curl \
 ## ip address
 
 ```bash
-# curl https://ident.me/  # https://api.ident.me/
-curl https://ident.me/json | jq
-# curl https://checkip.amazonaws.com/
+# curl -s https://api.ipify.org  # https://www.ipify.org/
+# curl -s 'https://api64.ipify.org?format=json' | jq
+curl -s 'https://api.ipify.org?format=json' | jq
+# curl -s https://ident.me/  # https://api.ident.me/
+# curl -s https://ident.me/json | jq
+# curl -s https://checkip.amazonaws.com/
 ```
 
 
