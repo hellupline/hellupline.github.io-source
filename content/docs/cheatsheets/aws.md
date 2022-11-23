@@ -15,7 +15,7 @@ aws ssm send-command \
     --max-errors '0' \
     --document-name 'AWS-RunShellScript' \
     --document-version '$DEFAULT' \
-    --parameters '{"workingDirectory": "","executionTimeout": "3600","commands": ["echo hello world"]}' \
+    --parameters '{"workingDirectory": [""], "executionTimeout": ["3600"], "commands": ["echo hello world"]}' \
     --targets '[{"Key":"InstanceIds","Values":[]}]'
 ```
 
