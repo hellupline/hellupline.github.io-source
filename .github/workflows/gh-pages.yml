@@ -27,8 +27,8 @@ jobs:
 
           - name: Deploy
             uses: peaceiris/actions-gh-pages@v3
-            env:
+            with:
                 deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-                external_repository: hellupline/hellupline.github.io
-                publish_branch: main
-                publish_dir: ./public
+                external_repository: 'hellupline/hellupline.github.io'
+                publish_branch: 'main'
+                publish_dir: './public'
