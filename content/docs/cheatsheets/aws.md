@@ -4,6 +4,73 @@ title: 'aws'
 ---
 
 
+## port forward to ec2 instance
+
+```bash
+aws ssm start-session \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --document-name 'AWS-StartInteractiveCommand' \
+    --document-version '$DEFAULT' \
+    --parameters '{"command": "echo hello"}' \
+    --target 'INSTANCE_ID' \
+```
+
+
+## port forward to ec2 instance
+
+```bash
+aws ssm start-session \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --document-name 'AWS-StartPortForwardingSession' \
+    --document-version '$DEFAULT' \
+    --parameters '{"portNumber": "6443", "localPortNumber": "6443"}' \
+    --target 'INSTANCE_ID' \
+```
+
+
+## port forward to remote host using ec2 instance
+
+```bash
+aws ssm start-session \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --document-name 'AWS-StartPortForwardingSessionToRemoteHost' \
+    --document-version '$DEFAULT' \
+    --parameters '{"portNumber": "6443", "localPortNumber": "6443", "host": "database.local"}' \
+    --target 'INSTANCE_ID' \
+```
+
+
+## port forward to remote host using ec2 instance, using unix socket
+
+```bash
+aws ssm start-session \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --document-name 'AWS-StartPortForwardingSessionToRemoteHost' \
+    --document-version '$DEFAULT' \
+    --parameters '{"portNumber": "6443", "localUnixSocket": "./application.sock"}' \
+    --target 'INSTANCE_ID' \
+```
+
+
+## forward ssh session
+
+```bash
+# Host i-* mi-*
+#     ProxyCommand sh -c "aws ssm start-session --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --target %h"
+aws ssm start-session \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --document-name 'AWS-StartPortForwardingSessionToRemoteHost' \
+    --document-version '$DEFAULT' \
+    --parameters '{"portNumber": "6443", "localUnixSocket": "./application.sock"}' \
+    --target 'INSTANCE_ID' \
+```
+
+
 ## run command on multiple ec2 instances
 
 ```bash
@@ -15,8 +82,8 @@ aws ssm send-command \
     --max-errors '0' \
     --document-name 'AWS-RunShellScript' \
     --document-version '$DEFAULT' \
-    --targets '[{"Key":"InstanceIds","Values":[]}]' \
-    --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["echo hello world"]}'
+    --parameters '{"workingDirectory": "","executionTimeout": "3600","commands": ["echo hello world"]}' \
+    --targets '[{"Key":"InstanceIds","Values":[]}]'
 ```
 
 
