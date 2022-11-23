@@ -4,49 +4,19 @@ title: 'aws'
 ---
 
 
-## compare 2 rds db cluster parameter group
+## run command on multiple ec2 instances
 
-```python
-import boto3
-from pprint import pprint
-
-rds = boto3.client('rds')
-paginator = rds.get_paginator('describe_db_cluster_parameters')
-a = set(
-    (parameter['ParameterName'], parameter.get('ParameterValue'))
-    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-a')
-    for parameter in page['Parameters']
-)
-b = set(
-    (parameter['ParameterName'], parameter.get('ParameterValue'))
-    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-b')
-    for parameter in page['Parameters']
-)
-pprint(a - b)
-pprint(b - a)
-```
-
-
-## compare 2 rds db parameter group
-
-```python
-import boto3
-from pprint import pprint
-
-rds = boto3.client('rds')
-paginator = rds.get_paginator('describe_db_parameters')
-a = set(
-    (parameter['ParameterName'], parameter.get('ParameterValue'))
-    for page in paginator.paginate(DBParameterGroupName='parameter-group-a')
-    for parameter in page['Parameters']
-)
-b = set(
-    (parameter['ParameterName'], parameter.get('ParameterValue'))
-    for page in paginator.paginate(DBParameterGroupName='parameter-group-b')
-    for parameter in page['Parameters']
-)
-pprint(a - b)
-pprint(b - a)
+```bash
+aws ssm send-command \
+    --profile 'production' \
+    --region 'us-east-1' \
+    --timeout-seconds '600' \
+    --max-concurrency '50' \
+    --max-errors '0' \
+    --document-name 'AWS-RunShellScript' \
+    --document-version '$DEFAULT' \
+    --targets '[{"Key":"InstanceIds","Values":[]}]' \
+    --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["echo hello world"]}'
 ```
 
 
@@ -208,6 +178,52 @@ for PROFILE_NAME in "staging" "production"; do
             done
     done
 done
+```
+
+
+## compare 2 rds db cluster parameter group
+
+```python
+import boto3
+from pprint import pprint
+
+rds = boto3.client('rds')
+paginator = rds.get_paginator('describe_db_cluster_parameters')
+a = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-a')
+    for parameter in page['Parameters']
+)
+b = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBClusterParameterGroupName='parameter-group-b')
+    for parameter in page['Parameters']
+)
+pprint(a - b)
+pprint(b - a)
+```
+
+
+## compare 2 rds db parameter group
+
+```python
+import boto3
+from pprint import pprint
+
+rds = boto3.client('rds')
+paginator = rds.get_paginator('describe_db_parameters')
+a = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBParameterGroupName='parameter-group-a')
+    for parameter in page['Parameters']
+)
+b = set(
+    (parameter['ParameterName'], parameter.get('ParameterValue'))
+    for page in paginator.paginate(DBParameterGroupName='parameter-group-b')
+    for parameter in page['Parameters']
+)
+pprint(a - b)
+pprint(b - a)
 ```
 
 
