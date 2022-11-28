@@ -160,4 +160,6 @@ flatpak install flathub \
 	com.discordapp.Discord \
 	com.slack.Slack \
 	com.spotify.Client
+
+sudo systemctl enable --now pkgfile-update.timer
 ```
