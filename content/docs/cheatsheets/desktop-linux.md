@@ -146,8 +146,11 @@ pamac install \
     numlockx \
     openbsd-netcat \
     pipewire-x11-bell \
+    pkgfile \
     python-pynvim \
-    whois
+    whois \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
 pamac build \
 	aws-sam-cli \
 	aws-session-manager-plugin \
