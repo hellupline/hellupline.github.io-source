@@ -134,40 +134,40 @@ pamac install \
 	xdotool \
 	xorg-xwininfo \
 	yt-dlp \
-    feh \
-    gnome-disk-utility \
-    gsmartcontrol \
-    helm \
-    ipython \
-    jq \
-    neovim \
-    nodejs \
-    npm \
-    numlockx \
-    openbsd-netcat \
-    pipewire-x11-bell \
-    pkgfile \
-    python-pynvim \
-    whois \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting
+	feh \
+	gnome-disk-utility \
+	gsmartcontrol \
+	helm \
+	ipython \
+	jq \
+	neovim \
+	nodejs \
+	npm \
+	numlockx \
+	openbsd-netcat \
+	pipewire-x11-bell \
+	pkgfile \
+	python-pynvim \
+	whois \
+	zsh-autosuggestions \
+	zsh-syntax-highlighting
 pamac build \
 	azure-cli \
 	aws-sam-cli \
 	aws-session-manager-plugin \
 	minecraft-launcher \
-    ijq
+	ijq
 flatpak install flathub \
 	com.chatterino.chatterino \
 	com.discordapp.Discord \
 	com.slack.Slack \
 	com.spotify.Client
 python3 -m pip install \
-    internetarchive \
-    jupyter \
-    jupyterlab \
-    pandas \
-    pyquery
+	internetarchive \
+	jupyter \
+	jupyterlab \
+	pandas \
+	pyquery
 
 sudo systemctl enable --now pkgfile-update.timer
 ```
