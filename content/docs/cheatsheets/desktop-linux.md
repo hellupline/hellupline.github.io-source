@@ -152,15 +152,22 @@ pamac install \
     zsh-autosuggestions \
     zsh-syntax-highlighting
 pamac build \
+	azure-cli \
 	aws-sam-cli \
 	aws-session-manager-plugin \
 	minecraft-launcher \
     ijq
 flatpak install flathub \
+	com.chatterino.chatterino \
 	com.discordapp.Discord \
 	com.slack.Slack \
-	com.spotify.Client \
-	com.chatterino.chatterino
+	com.spotify.Client
+python3 -m pip install \
+    internetarchive \
+    jupyter \
+    jupyterlab \
+    pandas \
+    pyquery
 
 sudo systemctl enable --now pkgfile-update.timer
 ```
