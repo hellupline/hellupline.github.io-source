@@ -20,7 +20,7 @@ aws ssm send-command \
 ```
 
 
-## run interactive command on ec2 instance
+## run non interactive command on ec2 instance
 
 ```bash
 aws ssm start-session \
@@ -88,7 +88,7 @@ aws ssm start-session \
 aws ssm start-session \
     --profile 'production' \
     --region 'us-east-1' \
-    --document-name 'AWS-StartPortForwardingSessionToRemoteHost' \
+    --document-name 'AWS-StartSSHSession' \
     --parameters '{"portNumber": ["%p"]}' \
     --target '%h' \
 ```
