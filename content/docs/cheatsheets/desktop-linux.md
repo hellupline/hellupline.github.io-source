@@ -159,7 +159,8 @@ pamac build \
 flatpak install flathub \
 	com.discordapp.Discord \
 	com.slack.Slack \
-	com.spotify.Client
+	com.spotify.Client \
+	com.chatterino.chatterino
 
 sudo systemctl enable --now pkgfile-update.timer
 ```
