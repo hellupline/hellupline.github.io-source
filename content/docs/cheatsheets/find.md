@@ -116,3 +116,13 @@ find "${PWD}"
 ```bash
 find ./ -regextype posix-egrep -regex '.*\.(avi|mkv|mp4|wmv|flv|webm)$'
 ```
+
+
+
+## save to file
+
+```bash
+find ./ \
+    \( -type f -fprintf output_file.txt '%#m %u %p\n' \) , \
+    \( -type d -fprintf output_dir.txt '%#m %u %p\n' \)
+```
