@@ -35,7 +35,7 @@ nmcli device wifi connect <ssid> password <pass> iface <wiface>
 nmcli device wifi disconnect iface <wiface>
 
 # show wifi password and qr code
-sudo nmcli device wifi show
+sudo nmcli device wifi show-password
 ```
 
 
