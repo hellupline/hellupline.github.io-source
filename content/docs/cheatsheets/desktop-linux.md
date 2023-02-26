@@ -102,6 +102,7 @@ pamac install \
 	byobu \
 	dnsutils \
 	qemu-full \
+	virt-manager \
 	docker \
 	docker-compose \
 	firefox \
