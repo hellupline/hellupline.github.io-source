@@ -101,6 +101,7 @@ pamac install \
 	brave-browser \
 	byobu \
 	dnsutils \
+	qemu-full \
 	docker \
 	docker-compose \
 	firefox \
