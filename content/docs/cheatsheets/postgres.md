@@ -97,14 +97,119 @@ ORDER BY pg_namespace.nspname, pg_class.relname;
 SELECT
 	pg_namespace.nspname AS "object_schema",
 	pg_class.relname AS "object_name",
+	CASE 
+		WHEN pg_class.relkind = 'r' THEN 'ordinary table'
+		WHEN pg_class.relkind = 'i' THEN 'index'
+		WHEN pg_class.relkind = 'S' THEN 'sequence'
+		WHEN pg_class.relkind = 't' THEN 'TOAST table'
+		WHEN pg_class.relkind = 'v' THEN 'view'
+		WHEN pg_class.relkind = 'm' THEN 'materialized view'
+		WHEN pg_class.relkind = 'c' THEN 'composite type'
+		WHEN pg_class.relkind = 'f' THEN 'foreign table'
+		WHEN pg_class.relkind = 'p' THEN 'partitioned table'
+		WHEN pg_class.relkind = 'I' THEN 'partitioned index'
+	END AS "ojbect_kind",
 	pg_size_pretty(pg_total_relation_size(pg_class.oid)) AS "total_size"
-FROM pg_class
-LEFT JOIN pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
+FROM
+	pg_class
+LEFT JOIN
+	pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
 WHERE
 	pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
-	AND pg_class.relkind <> 'i'
-	AND pg_namespace.nspname !~ '^pg_toast'
-ORDER BY pg_total_relation_size(pg_class.oid) DESC;
+ORDER BY
+	pg_total_relation_size(pg_class.oid) DESC;
+```
+
+```
+WITH 
+	table_sizes AS (
+		SELECT
+			pg_namespace.nspname AS "object_schema",
+			pg_class.relname AS "object_name",
+			CASE 
+				WHEN pg_class.relkind = 'r' THEN 'ordinary table'
+				WHEN pg_class.relkind = 'i' THEN 'index'
+				WHEN pg_class.relkind = 'S' THEN 'sequence'
+				WHEN pg_class.relkind = 't' THEN 'TOAST table'
+				WHEN pg_class.relkind = 'v' THEN 'view'
+				WHEN pg_class.relkind = 'm' THEN 'materialized view'
+				WHEN pg_class.relkind = 'c' THEN 'composite type'
+				WHEN pg_class.relkind = 'f' THEN 'foreign table'
+				WHEN pg_class.relkind = 'p' THEN 'partitioned table'
+				WHEN pg_class.relkind = 'I' THEN 'partitioned index'
+			END AS "ojbect_kind",
+			pg_size_pretty(pg_total_relation_size(pg_class.oid)) AS "total_size"
+		FROM
+			pg_class
+		LEFT JOIN
+			pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
+		WHERE
+			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
+		ORDER BY
+			pg_total_relation_size(pg_class.oid) DESC
+	),
+	per_schema AS (
+		SELECT
+			pg_namespace.nspname AS "object_schema",
+			'N/A' AS "object_name",
+			'N/A' AS "ojbect_kind",
+			pg_size_pretty(SUM(pg_total_relation_size(pg_class.oid))) AS "total_size"
+		FROM
+			pg_class
+		LEFT JOIN
+			pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
+		WHERE
+			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
+		GROUP BY 
+			pg_namespace.nspname
+	),
+	per_kind AS (
+		SELECT
+			'N/A' AS "object_schema",
+			'N/A' AS "object_name",
+			CASE 
+				WHEN pg_class.relkind = 'r' THEN 'ordinary table'
+				WHEN pg_class.relkind = 'i' THEN 'index'
+				WHEN pg_class.relkind = 'S' THEN 'sequence'
+				WHEN pg_class.relkind = 't' THEN 'TOAST table'
+				WHEN pg_class.relkind = 'v' THEN 'view'
+				WHEN pg_class.relkind = 'm' THEN 'materialized view'
+				WHEN pg_class.relkind = 'c' THEN 'composite type'
+				WHEN pg_class.relkind = 'f' THEN 'foreign table'
+				WHEN pg_class.relkind = 'p' THEN 'partitioned table'
+				WHEN pg_class.relkind = 'I' THEN 'partitioned index'
+			END AS "ojbect_kind",
+			pg_size_pretty(SUM(pg_total_relation_size(pg_class.oid))) AS "total_size"
+		FROM
+			pg_class
+		LEFT JOIN
+			pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
+		WHERE
+			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
+		GROUP BY 
+			pg_class.relkind
+	),
+	total AS (
+		SELECT
+			'N/A' AS "object_schema",
+			'N/A' AS "object_name",
+			'N/A' AS "ojbect_kind",
+			pg_size_pretty(SUM(pg_total_relation_size(pg_class.oid))) AS "total_size"
+		FROM
+			pg_class
+		LEFT JOIN
+			pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
+		WHERE
+			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
+	)
+
+SELECT * FROM total
+UNION ALL
+SELECT * FROM table_sizes
+UNION ALL
+SELECT * FROM per_schema
+UNION ALL
+SELECT * FROM per_kind;
 ```
 
 
