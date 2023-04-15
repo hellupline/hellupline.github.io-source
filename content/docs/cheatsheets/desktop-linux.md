@@ -100,6 +100,7 @@ pamac install \
 	aws-cli \
 	brave-browser \
 	byobu \
+	ctags \
 	dnsutils \
 	docker \
 	docker-compose \
