@@ -101,14 +101,18 @@ pamac install \
 	brave-browser \
 	byobu \
 	dnsutils \
-	qemu-full \
-	virt-manager \
 	docker \
 	docker-compose \
+	feh \
 	firefox \
+	gnome-disk-utility \
 	gnome-terminal \
 	gnumeric \
+	gsmartcontrol \
+	helm \
 	hugo \
+	ipython \
+	jq \
 	keepassxc \
 	kubectl \
 	lib32-pipewire \
@@ -117,12 +121,22 @@ pamac install \
 	manjaro-pipewire \
 	minetest \
 	mpv \
+	neovim \
 	nmap \
+	nodejs \
+	npm \
+	numlockx \
 	obs-studio libva-intel-driver \
+	openbsd-netcat \
 	pavucontrol \
 	pipewire-pulse \
+	pipewire-x11-bell \
+	pkgfile \
 	polybar \
 	python-pip \
+	python-pynvim \
+	qemu-desktop \
+	qemu-full \
 	redshift \
 	rofi \
 	seahorse \
@@ -130,27 +144,14 @@ pamac install \
 	stow \
 	stress \
 	terraform \
+	virt-manager \
+	whois \
 	wine \
 	winetricks \
 	wmctrl \
 	xdotool \
 	xorg-xwininfo \
 	yt-dlp \
-	feh \
-	gnome-disk-utility \
-	gsmartcontrol \
-	helm \
-	ipython \
-	jq \
-	neovim \
-	nodejs \
-	npm \
-	numlockx \
-	openbsd-netcat \
-	pipewire-x11-bell \
-	pkgfile \
-	python-pynvim \
-	whois \
 	zsh-autosuggestions \
 	zsh-syntax-highlighting
 pamac build \
