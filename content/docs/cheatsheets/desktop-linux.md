@@ -153,6 +153,7 @@ pamac install \
 	xdotool \
 	xorg-xwininfo \
 	yt-dlp \
+	zip \
 	zsh-autosuggestions \
 	zsh-syntax-highlighting
 pamac build \
