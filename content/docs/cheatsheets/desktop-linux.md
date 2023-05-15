@@ -112,6 +112,7 @@ pamac install \
 	gsmartcontrol \
 	helm \
 	hugo \
+	pandoc \
 	ipython \
 	jq \
 	keepassxc \
