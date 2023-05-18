@@ -128,6 +128,7 @@ pamac install \
 	nodejs \
 	npm \
 	numlockx \
+	github-cli \
 	obs-studio libva-intel-driver \
 	openbsd-netcat \
 	pavucontrol \
