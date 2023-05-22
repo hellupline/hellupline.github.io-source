@@ -103,6 +103,7 @@ pamac install \
 	ctags \
 	dnsutils \
 	docker \
+	docker-buildx \
 	docker-compose \
 	feh \
 	firefox \
