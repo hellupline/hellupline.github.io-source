@@ -3,7 +3,7 @@ title: 'nihongo'
 
 ---
 
-# Verbs
+# verbs
 
 
 ## 行く : iku
@@ -32,20 +32,20 @@ title: 'nihongo'
 
 | Name                       | Japanese         | Romaji            | Japanese (Example)            | Romaji (Example)                        | English                         |
 | -                          | -                | -                 | -                             | -                                       | -                               |
-| Present Polite Positive    | 帰ります         | kaerimasu         | 今日,私は家へ帰ります         | kyou, watashi wa ie e kaerimasu         | Today, I am going home          |
-| Present Polite Negative    | 帰りません       | kaerimasen        | 今日,私は家へ帰りません       | kyou, watashi wa ie e kaerimasen        | Today, I am not going home      |
-| Present Plain Positive     | 帰る             | kaeru             | 今日,私は家へ帰る             | kyou, watashi wa ie e kaeru             | Today, I'm going home           |
-| Present Plain Negative     | 帰らない         | kaeranai          | 今日,私は家へ帰らない         | kyou, watashi wa ie e kaeranai          | Today, I'm not going home       |
-| Past Polite Positive       | 帰りました       | kaerimashita      | 今日,私は家へ帰りました       | kyou, watashi wa ie e kaerimashita      | Today, I did came back home     |
-| Past Polite Negative       | 帰りませんでした | kaerimasendeshita | 今日,私は家へ帰りませんでした | kyou, watashi wa ie e kaerimasendeshita | Today, I did not came back home |
-| Past Plain Positive        | 帰った           | kaetta            | 今日,私は家へ帰った           | kyou, watashi wa ie e kaetta            | Today, I did came back home     |
-| Past Plain Negative        | 帰らなかった     | kaeranakatta      | 今日,私は家へ帰らなかった     | kyou, watashi wa ie e kaeranakatta      | Today, I didn't came back home  |
-| Potential Polite Positive  | 帰れます         | kaeremasu         | 今日,私は家へ帰れます         | kyou, watashi wa ie e kaeremasu         | Today, I can go back home       |
-| Potential Polite Negative  | 帰れません       | kaeremasen        | 今日,私は家へ帰れません       | kyou, watashi wa ie e kaeremasen        | Today, I can not go back home   |
-| Potential Plain Positive   | 帰れる           | kaereru           | 今日,私は家へ帰れる           | kyou, watashi wa ie e kaereru           | Today, I can go back home       |
-| Potential Plain Negative   | 帰れない         | kaerenai          | 今日,私は家へ帰れない         | kyou, watashi wa ie e kaerenai          | Today, I can't go back home     |
-| Volitional Polite Positive | 帰りましょう     | kaerimashou       | 今日,私は家へ帰りましょう     | kyou, watashi wa ie e kaerimashou       | Today, let's go home            |
-| Volitional Plain Positive  | 帰ろう           | kaerou            | 今日,私は家へ帰ろう           | kyou, watashi wa ie e kaerou            | Today, let's go home            |
+| Present Polite Positive    | 帰ります         | kaerimasu         | 今日,私は家へ帰ります         | kyou, watashi wa ie e kaerimasu         | today, I am going home          |
+| Present Polite Negative    | 帰りません       | kaerimasen        | 今日,私は家へ帰りません       | kyou, watashi wa ie e kaerimasen        | today, I am not going home      |
+| Present Plain Positive     | 帰る             | kaeru             | 今日,私は家へ帰る             | kyou, watashi wa ie e kaeru             | today, I'm going home           |
+| Present Plain Negative     | 帰らない         | kaeranai          | 今日,私は家へ帰らない         | kyou, watashi wa ie e kaeranai          | today, I'm not going home       |
+| Past Polite Positive       | 帰りました       | kaerimashita      | 今日,私は家へ帰りました       | kyou, watashi wa ie e kaerimashita      | today, I did came back home     |
+| Past Polite Negative       | 帰りませんでした | kaerimasendeshita | 今日,私は家へ帰りませんでした | kyou, watashi wa ie e kaerimasendeshita | today, I did not came back home |
+| Past Plain Positive        | 帰った           | kaetta            | 今日,私は家へ帰った           | kyou, watashi wa ie e kaetta            | today, I did came back home     |
+| Past Plain Negative        | 帰らなかった     | kaeranakatta      | 今日,私は家へ帰らなかった     | kyou, watashi wa ie e kaeranakatta      | today, I didn't came back home  |
+| Potential Polite Positive  | 帰れます         | kaeremasu         | 今日,私は家へ帰れます         | kyou, watashi wa ie e kaeremasu         | today, I can go back home       |
+| Potential Polite Negative  | 帰れません       | kaeremasen        | 今日,私は家へ帰れません       | kyou, watashi wa ie e kaeremasen        | today, I can not go back home   |
+| Potential Plain Positive   | 帰れる           | kaereru           | 今日,私は家へ帰れる           | kyou, watashi wa ie e kaereru           | today, I can go back home       |
+| Potential Plain Negative   | 帰れない         | kaerenai          | 今日,私は家へ帰れない         | kyou, watashi wa ie e kaerenai          | today, I can't go back home     |
+| Volitional Polite Positive | 帰りましょう     | kaerimashou       | 今日,私は家へ帰りましょう     | kyou, watashi wa ie e kaerimashou       | today, let's go home            |
+| Volitional Plain Positive  | 帰ろう           | kaerou            | 今日,私は家へ帰ろう           | kyou, watashi wa ie e kaerou            | today, let's go home            |
 
 
 ## 買う : kau
@@ -196,68 +196,72 @@ title: 'nihongo'
 
 
 
-# Vocabulary
+# vocabulary
 
 
-## Week Days
+## week days
 
 | Kanji                                     | Hiragana   | Romaji     | English   | Name   |
 | -                                         | -          | -          | -         | -      |
-| [月曜日](https://jisho.org/search/月曜日) | げつようび | getsuyoubi | Monday    | Moon   |
-| [火曜日](https://jisho.org/search/火曜日) | かようび   | kayoubi    | Tuesday   | Fire   |
-| [水曜日](https://jisho.org/search/水曜日) | すいようび | suiyoubi   | Wednesday | Water  |
-| [木曜日](https://jisho.org/search/木曜日) | もくようび | mokuyoubi  | Thursday  | Wood   |
-| [金曜日](https://jisho.org/search/金曜日) | きんようび | kinyoubi   | Friday    | Gold   |
-| [土曜日](https://jisho.org/search/土曜日) | どようび   | doyoubi    | Saturday  | Ground |
-| [日曜日](https://jisho.org/search/日曜日) | にちようび | nichiyoubi | Sunday    | Sun    |
+| [月曜日](https://jisho.org/search/月曜日) | げつようび | getsuyoubi | monday    | moon   |
+| [火曜日](https://jisho.org/search/火曜日) | かようび   | kayoubi    | tuesday   | fire   |
+| [水曜日](https://jisho.org/search/水曜日) | すいようび | suiyoubi   | wednesday | water  |
+| [木曜日](https://jisho.org/search/木曜日) | もくようび | mokuyoubi  | thursday  | wood   |
+| [金曜日](https://jisho.org/search/金曜日) | きんようび | kinyoubi   | friday    | gold   |
+| [土曜日](https://jisho.org/search/土曜日) | どようび   | doyoubi    | saturday  | ground |
+| [日曜日](https://jisho.org/search/日曜日) | にちようび | nichiyoubi | sunday    | sun    |
 
 
-## Days / Time
+## days / time
 
 | Kanji                                     | Hiragana       | Romaji     | English                  |
 | -                                         | -              | -          | -                        |
-| [今日](https://jisho.org/search/今日)     | きょう         | kyou       | Today                    |
-| [明日](https://jisho.org/search/明日)     | あした         | ashita     | Tomorrow                 |
-| [昨日](https://jisho.org/search/昨日)     | きのう         | kinou      | Yesterday                |
-| [明後日](https://jisho.org/search/明後日) | あさって       | asatte     | The day after tomorrow   |
-| [一昨日](https://jisho.org/search/一昨日) | おととい       | ototoi     | The day before yesterday |
-| [今週](https://jisho.org/search/今週)     | こんしゅう     | konshuu    | This week                |
-| [来週](https://jisho.org/search/来週)     | らいしゅう     | raishuu    | Next week                |
-| [先週](https://jisho.org/search/先週)     | せんしゅう     | senshuu    | Last week                |
-| [週末](https://jisho.org/search/週末)     | しゅうまつ     | shuumatsu  | The weekend              |
+| [今日](https://jisho.org/search/今日)     | きょう         | kyou       | today                    |
+| [明日](https://jisho.org/search/明日)     | あした         | ashita     | tomorrow                 |
+| [昨日](https://jisho.org/search/昨日)     | きのう         | kinou      | yesterday                |
+| [明後日](https://jisho.org/search/明後日) | あさって       | asatte     | the day after tomorrow   |
+| [一昨日](https://jisho.org/search/一昨日) | おととい       | ototoi     | the day before yesterday |
+| [今週](https://jisho.org/search/今週)     | こんしゅう     | konshuu    | this week                |
+| [来週](https://jisho.org/search/来週)     | らいしゅう     | raishuu    | next week                |
+| [先週](https://jisho.org/search/先週)     | せんしゅう     | senshuu    | last week                |
+| [週末](https://jisho.org/search/週末)     | しゅうまつ     | shuumatsu  | the weekend              |
 | [三連休](https://jisho.org/search/三連休) | さんれんきゅう | sanrenkyuu | 3-day weekend            |
-| [毎日](https://jisho.org/search/毎日)     | まいにち       | mainichi   | Everyday                 |
-| [今](https://jisho.org/search/今)         | いま           | ima        | Now                      |
-| [朝](https://jisho.org/search/朝)         | あさ           | asa        | Morning                      |
-| [昼](https://jisho.org/search/昼)         | ひる           | hiru       | Noon                      |
-| [夜](https://jisho.org/search/夜)         | よる           | yoru       | Night
+| [毎日](https://jisho.org/search/毎日)     | まいにち       | mainichi   | everyday                 |
+| [今](https://jisho.org/search/今)         | いま           | ima        | now                      |
+| [朝](https://jisho.org/search/朝)         | あさ           | asa        | morning                  |
+| [昼](https://jisho.org/search/昼)         | ひる           | hiru       | noon                     |
+| [夜](https://jisho.org/search/夜)         | よる           | yoru       | night                    |
+| [夏](https://jisho.org/search/夏)         | なつ           | natsu      | summer                   |
+| [春](https://jisho.org/search/春)         | はる           | haru       | sprint                   |
+| [秋](https://jisho.org/search/秋)         | あき           | aki        | autumn                   |
+| [冬](https://jisho.org/search/冬)         | ふゆ           | furu       | winter                   |
+| [季節](https://jisho.org/search/季節)     | きせつ         | kisetsu    | kisetsu                  |
+| [四季](https://jisho.org/search/四季)     | しき           | shiki      | 4 seasons                |
 
 
+## colors
+
+| Kanji                                 | Hiragana | Romaji   | English             |
+| -                                     | -        | -        | -                   |
+| [黒](https://jisho.org/search/黒)     | くろ     | kuro     | black               |
+| [白](https://jisho.org/search/白)     | しろ     | shiro    | white               |
+| [赤](https://jisho.org/search/赤)     | あか     | aka      | red                 |
+| [緑](https://jisho.org/search/緑)     | みどり   | midori   | green               |
+| [青](https://jisho.org/search/青)     | あお     | ao       | blue                |
+| [黄色](https://jisho.org/search/黄色) | きいろ   | kiiro    | yellow              |
+| [水色](https://jisho.org/search/水色) | みずいろ | mizuiro  | water-color         |
+| [紫](https://jisho.org/search/紫)     | むらさき | murasaki | purple              |
+| [茶色](https://jisho.org/search/茶色) | ちゃいろ | chairo   | brown ( tea color ) |
+| [灰色](https://jisho.org/search/灰色) | はいいろ | haiiro   | gray                |
+| [金色](https://jisho.org/search/金色) | きんいろ | kiniro   | gold-color          |
+| [銀色](https://jisho.org/search/銀色) | ぎんいろ | giniro   | silver-color        |
+| [虹色](https://jisho.org/search/虹色) | にじいろ | nijiiro  | rainbowcolor        |
+|                                       |          | orenji   | orange              |
+|                                       |          | pinku    | pink                |
+|                                       |          | koniro   | deep blue           |
 
 
-## Colors
-
-| Kanji | Hiragana | Romaji   | English             |
-| -     | -        | -        | -                   |
-|       |          | kuro     | black               |
-|       |          | shiro    | white               |
-|       |          | aka      | red                 |
-|       |          | midori   | green               |
-|       |          | ao       | blue                |
-|       |          | kiiro    | yellow              |
-|       |          | orenji   | orange              |
-|       |          | mizuiro  | water-color         |
-|       |          | murasaki | purple              |
-|       |          | pinku    | pink                |
-|       |          | chairo   | brown ( tea color ) |
-|       |          | haiiro   | gray                |
-|       |          | koniro   | deep blue           |
-|       |          | kiniro   | gold-color          |
-|       |          | giniro   | silver-color        |
-|       |          | nijiiro  | rainbowcolor        |
-
-
-## Animals
+## animals
 
 | Kanji                             | Hiragana | Romaji  | English |
 | -                                 | -        | -       | -       |
@@ -269,6 +273,8 @@ title: 'nihongo'
 | [狸](https://jisho.org/search/狸) | たぬき   | tanuki  | raccoon |
 | [兎](https://jisho.org/search/兎) | うさぎ   | usagi   | rabbit  |
 | [蛙](https://jisho.org/search/蛙) | かえる   | kaeru   | frog    |
+| [魚](https://jisho.org/search/魚) | さかな   | sakana  | fish    |
+| [蛸](https://jisho.org/search/蛸) | たこ     | taka    | octopus |
 
 
 ## food
@@ -278,29 +284,50 @@ title: 'nihongo'
 | [肉](https://jisho.org/search/肉)     | にく         | niku     | meat        |
 | [ご飯](https://jisho.org/search/ご飯) | ごはん       | gohan    | cooked rice |
 | [牛乳](https://jisho.org/search/牛乳) | ぎゅうにゅう | gyuunyuu | milk        |
+| [西瓜](https://jisho.org/search/西瓜) | すいか       | suika    | watermelon  |
+| [林檎](https://jisho.org/search/林檎) | りんご       | ringo    | apple       |
+|                                       |              | gohan    | rice        |
 
 
-## Words
+## noun
 
-| Kanji                                 | Hiragana | Romaji   | English      |
-| -                                     | -        | -        | -            |
-| [水](https://jisho.org/search/水)     | みず     | mizu     | water        |
-| [火](https://jisho.org/search/火)     |          |          | fire         |
-| [空](https://jisho.org/search/空)     | そら     | sora     | sky          |
-| [風](https://jisho.org/search/風)     | かぜ     | kaze     | wind         |
-| [影](https://jisho.org/search/影)     | かげ     | kage     | shadow       |
-| [光](https://jisho.org/search/光)     | ひかり   | hikari   | light        |
-| [花](https://jisho.org/search/花)     | はな     | hana     | flower       |
-|                                       |          | tabemono |              |
-|                                       |          | nomimono |              |
-|                                       | ひこうき |          | airplane     |
-|                                       | りょこう |          | trip         |
-| [刃](https://jisho.org/search/刃)     | やいば   | yaiba    | blade        |
-| [鬼滅](https://jisho.org/search/鬼滅) |          | kimetsu  | demon slayer |
-| [鬼](https://jisho.org/search/鬼)     |          | oni      | demon        |
+| Kanji                                     | Hiragana | Romaji   | English      |
+| -                                         | -        | -        | -            |
+| [火](https://jisho.org/search/火)         | ひ       | hi (?)   | fire         |
+| [水](https://jisho.org/search/水)         | みず     | mizu     | water        |
+| [空](https://jisho.org/search/空)         | そら     | sora     | sky          |
+| [風](https://jisho.org/search/風)         | かぜ     | kaze     | wind         |
+| [影](https://jisho.org/search/影)         | かげ     | kage     | shadow       |
+| [光](https://jisho.org/search/光)         | ひかり   | hikari   | light        |
+| [花](https://jisho.org/search/花)         | はな     | hana     | flower       |
+| [花火](https://jisho.org/search/花火)     | はなび   | hanabi   | fireworks    |
+| [刃](https://jisho.org/search/刃)         | やいば   | yaiba    | blade        |
+| [鬼滅](https://jisho.org/search/鬼滅)     | きめつ   | kimetsu  | demon slayer |
+| [鬼](https://jisho.org/search/鬼)         | おに     | oni      | demon        |
+| [雪](https://jisho.org/search/雪)         | ゆき     | yuki     | snow         |
+| [祭り](https://jisho.org/search/祭り)     | まつり   | matsuri  | festival     |
+| [旅行](https://jisho.org/search/旅行)     | りょこう | ryokou   | trip         |
+| [食べ物](https://jisho.org/search/食べ物) | たべもの | tabemono | food         |
+| [飲み物](https://jisho.org/search/飲み物) | のみもの | nomimono | beverage     |
+| [車](https://jisho.org/search/車)         | くるま   | kuruma   | car          |
+| [飛行機](https://jisho.org/search/飛行機) | ひこうき | higouki  | airplane     |
+| [傘](https://jisho.org/search/傘)         | かさ     | kasa     | umbrella     |
+| [くつ](https://jisho.org/search/くつ)     | くつ     | kutsu    | shoe         |
+| [帽子](https://jisho.org/search/帽子)     | ぼうし   | boushi   | hat          |
+|                                           |          | basutei  | bustop       |
 
 
-## Verbs
+# adjective
+
+| Kanji                                         | Hiragana | Romaji   | English      |
+| -                                             | -        | -        | -            |
+| [寒い](https://jisho.org/search/寒い)         | さむい   | samui    | cold         |
+| [熱い](https://jisho.org/search/熱い)         | あつい   | atsui    | hot          |
+| [美味しい](https://jisho.org/search/美味しい) | おいしい | oishii   | tasty        |
+| [優しい](https://jisho.org/search/優しい)     | やさしい | yasashii | gentle       |
+
+
+## verbs
 
 | Kanji | Hiragana | Romaji    | English  |
 | -     | -        | -         | -        |
