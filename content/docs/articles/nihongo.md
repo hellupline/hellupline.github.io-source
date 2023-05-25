@@ -114,22 +114,22 @@ title: 'nihongo'
 ## 殺す : korosu
 [reference](https://conjugator.reverso.net/conjugation-japanese-verb-korosu.html)
 
-| Name                       | Japanese         | Romaji              | Japanese (Example) | Romaji (Example) | English |
-| -                          | -                | -                   | -                  | -                | -       |
-| Present Polite Positive    | 殺します         | koroshimasu         |                    |                  |         |
-| Present Polite Negative    | 殺しません       | koroshimasen        |                    |                  |         |
-| Present Plain Positive     | 殺す             | korosu              |                    |                  |         |
-| Present Plain Negative     | 殺さない         | korosanai           |                    |                  |         |
-| Past Polite Positive       | 殺しました       | koroshimashita      |                    |                  |         |
-| Past Polite Negative       | 殺しませんでした | koroshimasendeshita |                    |                  |         |
-| Past Plain Positive        | 殺した           | koroshita           |                    |                  |         |
-| Past Plain Negative        | 殺さなかった     | korosanakatta       |                    |                  |         |
-| Potential Polite Positive  | 殺せます         | korosemasu          |                    |                  |         |
-| Potential Polite Negative  | 殺せません       | korosemasen         |                    |                  |         |
-| Potential Plain Positive   | 殺せる           | koroseru            |                    |                  |         |
-| Potential Plain Negative   | 殺せない         | korosenai           |                    |                  |         |
-| Volitional Polite Positive | 殺しましょう     | koroshimashou       |                    |                  |         |
-| Volitional Plain Positive  | 殺そう           | korosou             |                    |                  |         |
+| Name                       | Japanese         | Romaji              | Japanese (Example)       | Romaji (Example)                | English                     |
+| -                          | -                | -                   | -                        | -                               | -                           |
+| Present Polite Positive    | 殺します         | koroshimasu         | 化け物を殺します         | bakemono wo koroshimasu         | the monster, I kill         |
+| Present Polite Negative    | 殺しません       | koroshimasen        | 化け物を殺しません       | bakemono wo koroshimasen        | the monster, I do not kill  |
+| Present Plain Positive     | 殺す             | korosu              | 化け物を殺す             | bakemono wo korosu              | the monster, I kill         |
+| Present Plain Negative     | 殺さない         | korosanai           | 化け物を殺さない         | bakemono wo korosanai           | the monster, I do not kill  |
+| Past Polite Positive       | 殺しました       | koroshimashita      | 化け物を殺しました       | bakemono wo koroshimashita      | the monster, I did kill     |
+| Past Polite Negative       | 殺しませんでした | koroshimasendeshita | 化け物を殺しませんでした | bakemono wo koroshimasendeshita | the monster, I did not kill |
+| Past Plain Positive        | 殺した           | koroshita           | 化け物を殺した           | bakemono wo koroshita           | the monster, I did kill     |
+| Past Plain Negative        | 殺さなかった     | korosanakatta       | 化け物を殺さなかった     | bakemono wo korosanakatta       | the monster, I didn't kill  |
+| Potential Polite Positive  | 殺せます         | korosemasu          | 化け物を殺せます         | bakemono wo korosemasu          | the monster, I can kill     |
+| Potential Polite Negative  | 殺せません       | korosemasen         | 化け物を殺せません       | bakemono wo korosemasen         | the monster, I can not kill |
+| Potential Plain Positive   | 殺せる           | koroseru            | 化け物を殺せる           | bakemono wo koroseru            | the monster, I can kill     |
+| Potential Plain Negative   | 殺せない         | korosenai           | 化け物を殺せない         | bakemono wo korosenai           | the monster, I can't kill   |
+| Volitional Polite Positive | 殺しましょう     | koroshimashou       | 化け物を殺しましょう     | bakemono wo koroshimashou       | the monster, let's kill     |
+| Volitional Plain Positive  | 殺そう           | korosou             | 化け物を殺そう           | bakemono wo korosou             | the monster, let's kill     |
 
 
 ## 飲む : nomu
@@ -156,43 +156,43 @@ title: 'nihongo'
 ## 食べる : taberu
 [reference](https://conjugator.reverso.net/conjugation-japanese-verb-taberu.html)
 
-| Name                       | Japanese         | Romaji           | Japanese (Example) | Romaji (Example) | English |
-| -                          | -                | -                | -                  | -                | -       |
-| Present Polite Positive    | たべます         | tabemasu         |                    |                  |         |
-| Present Polite Negative    | たべません       | tabemasen        |                    |                  |         |
-| Present Plain Positive     | たべる           | taberu           |                    |                  |         |
-| Present Plain Negative     | たべない         | tabenai          |                    |                  |         |
-| Past Polite Positive       | たべました       | tabemashita      |                    |                  |         |
-| Past Polite Negative       | たべませんでした | tabemasendeshita |                    |                  |         |
-| Past Plain Positive        | たべた           | tabeta           |                    |                  |         |
-| Past Plain Negative        | たべなかった     | tabenakatta      |                    |                  |         |
-| Potential Polite Positive  | たべられます     | taberaremasu     |                    |                  |         |
-| Potential Polite Negative  | たべられません   | taberaremasen    |                    |                  |         |
-| Potential Plain Positive   | たべられる       | taberareru       |                    |                  |         |
-| Potential Plain Negative   | たべられない     | taberarenai      |                    |                  |         |
-| Volitional Polite Positive | たべましょう     | tabemashou       |                    |                  |         |
-| Volitional Plain Positive  | たべよう         | tabeyou          |                    |                  |         |
+| Name                       | Japanese         | Romaji           | Japanese (Example)             | Romaji (Example)                 | English                    |
+| -                          | -                | -                | -                              | -                                | -                          |
+| Present Polite Positive    | 食べます         | tabemasu         | 豚カツカレーを食べます         | tonkatsu karē o tabemasu         | pork curry, I do eat       |
+| Present Polite Negative    | 食べません       | tabemasen        | 豚カツカレーを食べません       | tonkatsu karē o tabemasen        | pork curry, I do not eat   |
+| Present Plain Positive     | 食べる           | taberu           | 豚カツカレーを食べる           | tonkatsu karē o taberu           | pork curry, I do eat       |
+| Present Plain Negative     | 食べない         | tabenai          | 豚カツカレーを食べない         | tonkatsu karē o tabenai          | pork curry, I don't eat    |
+| Past Polite Positive       | 食べました       | tabemashita      | 豚カツカレーを食べました       | tonkatsu karē o tabemashita      | pork curry, I did eat      |
+| Past Polite Negative       | 食べませんでした | tabemasendeshita | 豚カツカレーを食べませんでした | tonkatsu karē o tabemasendeshita | pork curry, I did not eata |
+| Past Plain Positive        | 食べた           | tabeta           | 豚カツカレーを食べた           | tonkatsu karē o tabeta           | pork curry, I did eat      |
+| Past Plain Negative        | 食べなかった     | tabenakatta      | 豚カツカレーを食べなかった     | tonkatsu karē o tabenakatta      | pork curry, I didn't eat   |
+| Potential Polite Positive  | 食べられます     | taberaremasu     | 豚カツカレーを食べられます     | tonkatsu karē o taberaremasu     | pork curry, I can eat      |
+| Potential Polite Negative  | 食べられません   | taberaremasen    | 豚カツカレーを食べられません   | tonkatsu karē o taberaremasen    | pork curry, I can not eat  |
+| Potential Plain Positive   | 食べられる       | taberareru       | 豚カツカレーを食べられる       | tonkatsu karē o taberareru       | pork curry, I can eat      |
+| Potential Plain Negative   | 食べられない     | taberarenai      | 豚カツカレーを食べられない     | tonkatsu karē o taberarenai      | pork curry, I can't eat    |
+| Volitional Polite Positive | 食べましょう     | tabemashou       | 豚カツカレーを食べましょう     | tonkatsu karē o tabemashou       | pork curry, let's eat      |
+| Volitional Plain Positive  | 食べよう         | tabeyou          | 豚カツカレーを食べよう         | tonkatsu karē o tabeyou          | pork curry, let's eat      |
 
 
 ## 見る : miru
 [reference](https://conjugator.reverso.net/conjugation-japanese-verb-miru.html)
 
-| Name                       | Japanese | Romaji         | Japanese (Example) | Romaji (Example) | English |
-| -                          | -        | -              | -                  | -                | -       |
-| Present Polite Positive    |          | mimasu         |                    |                  |         |
-| Present Polite Negative    |          | mimasen        |                    |                  |         |
-| Present Plain Positive     |          | miru           |                    |                  |         |
-| Present Plain Negative     |          | minai          |                    |                  |         |
-| Past Polite Positive       |          | mimashita      |                    |                  |         |
-| Past Polite Negative       |          | mimasendeshita |                    |                  |         |
-| Past Plain Positive        |          | mita           |                    |                  |         |
-| Past Plain Negative        |          | minakatta      |                    |                  |         |
-| Potential Polite Positive  |          | miraremasu     |                    |                  |         |
-| Potential Polite Negative  |          | miraremasen    |                    |                  |         |
-| Potential Plain Positive   |          | mirareru       |                    |                  |         |
-| Potential Plain Negative   |          | mirarenai      |                    |                  |         |
-| Volitional Polite Positive |          | mimashou       |                    |                  |         |
-| Volitional Plain Positive  |          | miyou          |                    |                  |         |
+| Name                       | Japanese       | Romaji         | Japanese (Example)     | Romaji (Example)         | English                   |
+| -                          | -              | -              | -                      | -                        | -                         |
+| Present Polite Positive    | 見ます         | mimasu         | 飛行機を見ます         | higouki o mimasu         | I do see an airplane      |
+| Present Polite Negative    | 見ません       | mimasen        | 飛行機を見ません       | higouki o mimasen        | I do not see airplane     |
+| Present Plain Positive     | 見る           | miru           | 飛行機を見る           | higouki o miru           | I do see an airplane      |
+| Present Plain Negative     | 見ない         | minai          | 飛行機を見ない         | higouki o minai          | I dont see an airplane    |
+| Past Polite Positive       | 見ました       | mimashita      | 飛行機を見ました       | higouki o mimashita      | I did see an airplane     |
+| Past Polite Negative       | 見ませんでした | mimasendeshita | 飛行機を見ませんでした | higouki o mimasendeshita | I did not see an airplane |
+| Past Plain Positive        | 見た           | mita           | 飛行機を見た           | higouki o mita           | I did see an airplane     |
+| Past Plain Negative        | 見なかった     | minakatta      | 飛行機を見なかった     | higouki o minakatta      | I didn't see an airplane  |
+| Potential Polite Positive  | 見られます     | miraremasu     | 飛行機を見られます     | higouki o miraremasu     | I can see an airplane     |
+| Potential Polite Negative  | 見られません   | miraremasen    | 飛行機を見られません   | higouki o miraremasen    | I can not see an airplane |
+| Potential Plain Positive   | 見られる       | mirareru       | 飛行機を見られる       | higouki o mirareru       | I can see an airplane     |
+| Potential Plain Negative   | 見られない     | mirarenai      | 飛行機を見られない     | higouki o mirarenai      | I can't see an airplane   |
+| Volitional Polite Positive | 見ましょう     | mimashou       | 飛行機を見ましょう     | higouki o mimashou       | let's see an airplane     |
+| Volitional Plain Positive  | 見よう         | miyou          | 飛行機を見よう         | higouki o miyou          | let's see an airplane     |
 
 
 
@@ -263,18 +263,20 @@ title: 'nihongo'
 
 ## animals
 
-| Kanji                             | Hiragana | Romaji  | English |
-| -                                 | -        | -       | -       |
-| [狐](https://jisho.org/search/狐) | きつね   | kitsune | fox     |
-| [猫](https://jisho.org/search/猫) | ねこ     | neko    | cat     |
-| [犬](https://jisho.org/search/犬) | いぬ     | inu     | dog     |
-| [豚](https://jisho.org/search/豚) | うし     | buta    | pig     |
-| [牛](https://jisho.org/search/牛) | うし     | ushi    | cow     |
-| [狸](https://jisho.org/search/狸) | たぬき   | tanuki  | raccoon |
-| [兎](https://jisho.org/search/兎) | うさぎ   | usagi   | rabbit  |
-| [蛙](https://jisho.org/search/蛙) | かえる   | kaeru   | frog    |
-| [魚](https://jisho.org/search/魚) | さかな   | sakana  | fish    |
-| [蛸](https://jisho.org/search/蛸) | たこ     | taka    | octopus |
+| Kanji                                 | Hiragana | Romaji  | English      |
+| -                                     | -        | -       | -            |
+| [狐](https://jisho.org/search/狐)     | きつね   | kitsune | fox          |
+| [猫](https://jisho.org/search/猫)     | ねこ     | neko    | cat          |
+| [犬](https://jisho.org/search/犬)     | いぬ     | inu     | dog          |
+| [豚](https://jisho.org/search/豚)     | ぶた     | buta    | pig          |
+| [牛](https://jisho.org/search/牛)     | うし     | ushi    | cow          |
+| [狸](https://jisho.org/search/狸)     | たぬき   | tanuki  | raccoon      |
+| [兎](https://jisho.org/search/兎)     | うさぎ   | usagi   | rabbit       |
+| [蛙](https://jisho.org/search/蛙)     | かえる   | kaeru   | frog         |
+| [魚](https://jisho.org/search/魚)     | さかな   | sakana  | fish         |
+| [蛸](https://jisho.org/search/蛸)     | たこ     | tako    | octopus      |
+| [蜘蛛](https://jisho.org/search/蜘蛛) | くも     | kumo    | spider       |
+| [鷹](https://jisho.org/search/鷹)     | たか     | taka    | hawk, falcon |
 
 
 ## food
@@ -293,12 +295,21 @@ title: 'nihongo'
 
 | Kanji                                     | Hiragana | Romaji   | English      |
 | -                                         | -        | -        | -            |
-| [火](https://jisho.org/search/火)         | ひ       | hi (?)   | fire         |
+| [月](https://jisho.org/search/月)         | つき     | tsuki    | moon         |
+| [火](https://jisho.org/search/火)         | ひ       | hi       | fire         |
 | [水](https://jisho.org/search/水)         | みず     | mizu     | water        |
+| [木](https://jisho.org/search/木)         | き       | ki       | wood         |
+| [金](https://jisho.org/search/金)         | きん     | kin      | gold         |
+| [土](https://jisho.org/search/土)         | つち     | tsuchi   | earth (soil) |
+| [日](https://jisho.org/search/日)         | にち     | nichi    | sun          |
+| [銀](https://jisho.org/search/銀)         | ぎん     | gin      | silver       |
+| [鉄](https://jisho.org/search/鉄)         | てつ     | tetsu    | iron         |
 | [空](https://jisho.org/search/空)         | そら     | sora     | sky          |
 | [風](https://jisho.org/search/風)         | かぜ     | kaze     | wind         |
 | [影](https://jisho.org/search/影)         | かげ     | kage     | shadow       |
 | [光](https://jisho.org/search/光)         | ひかり   | hikari   | light        |
+| [込む](https://jisho.org/search/込む)     | こむ     | komu     | cloud        |
+| [異世界](https://jisho.org/search/異世界) | いせかい | isekai   | world        |
 | [花](https://jisho.org/search/花)         | はな     | hana     | flower       |
 | [花火](https://jisho.org/search/花火)     | はなび   | hanabi   | fireworks    |
 | [刃](https://jisho.org/search/刃)         | やいば   | yaiba    | blade        |
@@ -314,10 +325,13 @@ title: 'nihongo'
 | [傘](https://jisho.org/search/傘)         | かさ     | kasa     | umbrella     |
 | [くつ](https://jisho.org/search/くつ)     | くつ     | kutsu    | shoe         |
 | [帽子](https://jisho.org/search/帽子)     | ぼうし   | boushi   | hat          |
+| [化け物](https://jisho.org/search/化け物) | ばけもの | bakemono | monster      |
+| [薬](https://jisho.org/search/薬)         | くすり   | kusuri   | medicine     |
+| [薬屋](https://jisho.org/search/薬屋)     | くすりや | kusuriya | drugstore    |
 |                                           |          | basutei  | bustop       |
 
 
-# adjective
+## adjective
 
 | Kanji                                         | Hiragana | Romaji   | English      |
 | -                                             | -        | -        | -            |
@@ -327,7 +341,7 @@ title: 'nihongo'
 | [優しい](https://jisho.org/search/優しい)     | やさしい | yasashii | gentle       |
 
 
-## verbs
+## Verbs
 
 | Kanji | Hiragana | Romaji    | English  |
 | -     | -        | -         | -        |
