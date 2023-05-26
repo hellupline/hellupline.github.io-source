@@ -258,7 +258,7 @@ title: 'nihongo'
 | [虹色](https://jisho.org/search/虹色) | にじいろ | nijiiro  | rainbowcolor        |
 |                                       |          | orenji   | orange              |
 |                                       |          | pinku    | pink                |
-|                                       |          | koniro   | deep blue           |
+|   紺色                                    |          | koniro   | deep blue           |
 
 
 ## animals
