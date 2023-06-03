@@ -116,6 +116,7 @@ pamac install \
 	pandoc \
 	ipython \
 	jq \
+	podman \
 	keepassxc \
 	kubectl \
 	lib32-pipewire \
