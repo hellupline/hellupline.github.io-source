@@ -167,6 +167,7 @@ pamac build \
 	minecraft-launcher \
 	ijq
 flatpak install flathub \
+	com.authy.Authy \
 	com.chatterino.chatterino \
 	com.discordapp.Discord \
 	com.slack.Slack \
