@@ -142,6 +142,8 @@ pamac install \
 	python-pynvim \
 	qemu-desktop \
 	qemu-full \
+	qemu-user-static \
+	qemu-user-static-binfmt \
 	redshift \
 	rofi \
 	seahorse \
