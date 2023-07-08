@@ -100,6 +100,7 @@ pamac install \
 	aws-cli \
 	brave-browser \
 	byobu \
+	playerctl \
 	ctags \
 	dnsutils \
 	docker \
