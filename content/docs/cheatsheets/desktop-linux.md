@@ -166,6 +166,7 @@ pamac install \
 pamac build \
 	azure-cli \
 	aws-sam-cli \
+	google-cloud-cli \
 	aws-session-manager-plugin \
 	minecraft-launcher \
 	ijq
