@@ -168,7 +168,8 @@ pamac build \
 	aws-sam-cli \
 	aws-session-manager-plugin \
 	google-cloud-cli \
-	google-cloud-cli-gke-gcloud-auth-plugin
+	google-cloud-cli-gke-gcloud-auth-plugin \
+	cloud-sql-proxy \
 	minecraft-launcher \
 	ijq
 flatpak install flathub \
