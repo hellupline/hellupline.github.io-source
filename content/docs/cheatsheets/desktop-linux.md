@@ -100,7 +100,6 @@ pamac install \
 	aws-cli \
 	brave-browser \
 	byobu \
-	playerctl \
 	ctags \
 	dnsutils \
 	docker \
@@ -108,19 +107,21 @@ pamac install \
 	docker-compose \
 	feh \
 	firefox \
+	gamemode \
+	github-cli \
 	gnome-disk-utility \
 	gnome-terminal \
 	gnumeric \
 	gsmartcontrol \
 	helm \
 	hugo \
-	pandoc \
 	ipython \
 	jq \
-	podman \
 	keepassxc \
 	kubectl \
 	lib32-pipewire \
+	libretro-overlays \
+	libretro-shaders \
 	lutris \
 	maim \
 	manjaro-pipewire \
@@ -131,21 +132,27 @@ pamac install \
 	nodejs \
 	npm \
 	numlockx \
-	github-cli \
 	obs-studio libva-intel-driver \
 	openbsd-netcat \
+	pandoc \
 	pavucontrol \
 	pipewire-pulse \
 	pipewire-x11-bell \
 	pkgfile \
+	playerctl \
+	podman \
 	polybar \
 	python-pip \
+	python-pipx \
 	python-pynvim \
 	qemu-desktop \
 	qemu-full \
 	qemu-user-static \
 	qemu-user-static-binfmt \
 	redshift \
+	retroarch \
+	retroarch-assets-ozone \
+	retroarch-assets-xmb \
 	rofi \
 	seahorse \
 	steam \
