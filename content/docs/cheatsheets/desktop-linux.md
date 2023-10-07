@@ -154,6 +154,7 @@ pamac install \
 	retroarch-assets-ozone \
 	retroarch-assets-xmb \
 	rofi \
+	ripgrep \
 	seahorse \
 	steam \
 	stow \
