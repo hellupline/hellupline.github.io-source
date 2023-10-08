@@ -126,6 +126,7 @@ pamac install \
 	maim \
 	manjaro-pipewire \
 	minetest \
+	deno \
 	mpv \
 	neovim \
 	nmap \
