@@ -109,6 +109,7 @@ pamac install \
 	docker-compose \
 	feh \
 	firefox \
+	fzf \
 	gamemode \
 	github-cli \
 	gnome-disk-utility \
