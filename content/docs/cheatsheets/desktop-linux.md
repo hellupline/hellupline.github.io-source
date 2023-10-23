@@ -87,7 +87,8 @@ echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/nobeep.conf
 ## hardware clock
 
 ```bash
-sudo timedatectl set-local-rtc 0
+timedatectl set-local-rtc false
+timedatectl set-ntp true
 systemctl enable --now systemd-timesyncd.service
 ```
 
@@ -101,6 +102,7 @@ pamac install \
 	brave-browser \
 	byobu \
 	ctags \
+	deno \
 	dnsutils \
 	docker \
 	docker-buildx \
@@ -126,7 +128,6 @@ pamac install \
 	maim \
 	manjaro-pipewire \
 	minetest \
-	deno \
 	mpv \
 	neovim \
 	nmap \
@@ -154,8 +155,8 @@ pamac install \
 	retroarch \
 	retroarch-assets-ozone \
 	retroarch-assets-xmb \
-	rofi \
 	ripgrep \
+	rofi \
 	seahorse \
 	steam \
 	stow \
@@ -166,12 +167,20 @@ pamac install \
 	wine \
 	winetricks \
 	wmctrl \
+	xdg-desktop-portal-gtk \
 	xdotool \
 	xorg-xwininfo \
 	yt-dlp \
 	zip \
 	zsh-autosuggestions \
-	zsh-syntax-highlighting
+	zsh-syntax-highlighting \
+ 	flatpak \
+ 	pipewire-x11-bell \
+ 	unzip \
+
+pamac install libgnome-keyring wireplumber  # extras
+pacman --database --asdeps libgnome-keyring wireplumber
+
 pamac build \
 	azure-cli \
 	aws-sam-cli \
@@ -181,26 +190,33 @@ pamac build \
 	cloud-sql-proxy \
 	minecraft-launcher \
 	ijq
+
 flatpak install flathub \
 	com.authy.Authy \
 	com.chatterino.chatterino \
 	com.discordapp.Discord \
 	com.slack.Slack \
 	com.spotify.Client
+
 python3 -m pip install \
 	internetarchive \
 	jupyter \
 	jupyterlab \
 	pandas \
-	pyquery
+	pyquery \
+	requests
+
 poetry add --group=dev \
 	ipython \
 	pynvim \
 	black \
 	isort \
-	flake8 \
 	mypy \
 	pyright
 
-sudo systemctl enable --now pkgfile-update.timer
+systemctl enable --now pkgfile-update.timer
+systemctl enable --user pipewire-pulse
+ln --relative --symbolic /usr/share/xdg-desktop-portal/gtk-portals.conf /usr/share/xdg-desktop-portal/portals.conf
+# systemctl enable --user --now xdg-desktop-portal
+# systemctl enable --user --now xdg-desktop-portal-gtk
 ```
