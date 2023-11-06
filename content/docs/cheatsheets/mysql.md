@@ -25,6 +25,29 @@ WHERE pl.COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
 ORDER BY pl.TIME DESC;
 ```
 
+```sql
+SELECT 
+    a.trx_id, 
+    a.trx_state, 
+    a.trx_started, 
+    TIMESTAMPDIFF(SECOND,a.trx_started, now()) as "Seconds Transaction Has Been Open", 
+    a.trx_rows_modified, 
+    b.USER, 
+    b.host, 
+    b.db, 
+    b.command, 
+    b.time, 
+    b.state 
+FROM
+    information_schema.innodb_trx a, 
+    information_schema.processlist b 
+WHERE 
+    a.trx_mysql_thread_id=b.id
+    AND TIMESTAMPDIFF(SECOND,a.trx_started, now()) > 10 
+ORDER BY
+    trx_started
+```
+
 
 ## allow kill process on rds
 
