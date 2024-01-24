@@ -137,14 +137,15 @@ WITH
 				WHEN pg_class.relkind = 'f' THEN 'foreign table'
 				WHEN pg_class.relkind = 'p' THEN 'partitioned table'
 				WHEN pg_class.relkind = 'I' THEN 'partitioned index'
-			END AS "ojbect_kind",
+			END AS "object_kind",
 			pg_size_pretty(pg_total_relation_size(pg_class.oid)) AS "total_size"
 		FROM
 			pg_class
 		LEFT JOIN
 			pg_namespace ON (pg_namespace.oid = pg_class.relnamespace)
 		WHERE
-			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
+			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema') 
+			AND pg_class.relkind IN ('r', 'm', 'p')
 		ORDER BY
 			pg_total_relation_size(pg_class.oid) DESC
 	),
@@ -203,13 +204,12 @@ WITH
 			pg_namespace.nspname NOT IN ('pg_catalog', 'information_schema')
 	)
 
-SELECT * FROM total
-UNION ALL
+-- SELECT * FROM total
+-- UNION ALL 
+-- SELECT * FROM per_schema
+-- UNION ALL
 SELECT * FROM table_sizes
-UNION ALL
-SELECT * FROM per_schema
-UNION ALL
-SELECT * FROM per_kind;
+-- UNION ALL SELECT * FROM per_kind;
 ```
 
 
