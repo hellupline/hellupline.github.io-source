@@ -1,8 +1,6 @@
 ---
-title: 'find'
-
+title: "find"
 ---
-
 
 ## datetime
 
@@ -17,14 +15,13 @@ find ./ -mtime 5 # modified time exact than 5 days ago
 find ./ -daystart -mtime 1 # use start of day as base instead of 24 hours
 ```
 
-
 ### print
 
 ```bash
-find ./ -type f -printf '%TY-%Tm-%Td %TT%Tz %p\n'  # date time timezone
+find ./ -type f -printf '%TY-%Tm-%Td\t%TT%Tz\t%p\n' | sort -k1,2 | awk 'NR == 1 { print $3 " @ " $2; } END { print $3 " @ " $2; }' # newest and oldest file
+find ./ -type f -printf '%TY-%Tm-%Td\t%TT%Tz\t%p\n'  # date time timezone
 find ./ -type f -printf '%T@ %p\n'  # epoch timestamp
 ```
-
 
 ## size
 
@@ -41,7 +38,6 @@ find ./ -empty  # empty
 find ./ -type f -printf '%-10k %p\n'  # kbytes blocks
 find ./ -type f -printf '%-10s %p\n'  # bytes
 ```
-
 
 ## permissions
 
@@ -61,7 +57,6 @@ find ./ -perm /755 # any mask bits match
 find ./ -type f -printf '%M %#m %p\n'
 ```
 
-
 ## type
 
 ### locate
@@ -77,7 +72,6 @@ find ./ -type l # links
 ```bash
 find ./ -type f -printf '%y %p\n'
 ```
-
 
 ## owner
 
@@ -96,13 +90,11 @@ find ./ -gid 1000 # group id
 find ./ -type f -printf '%u %-5U %g %-5G %p\n'
 ```
 
-
 ## locate items between depth
 
 ```bash
 find ./ -mindepth 2 -maxdepth 5
 ```
-
 
 ## preserve path in output
 
@@ -110,14 +102,11 @@ find ./ -mindepth 2 -maxdepth 5
 find "${PWD}"
 ```
 
-
 ## regex
 
 ```bash
 find ./ -regextype posix-egrep -regex '.*\.(avi|mkv|mp4|wmv|flv|webm)$'
 ```
-
-
 
 ## save to file
 
