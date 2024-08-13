@@ -127,6 +127,31 @@ SHOW SLAVE STATUS;
 SHOW SLAVE HOSTS;
 ```
 
+### inspect replication status as query
+
+```sql
+SELECT
+	smi.master_log_name AS Master_Log_File,
+	smi.master_log_pos AS Read_Master_Log_Pos,
+	ssi.master_log_pos AS Exec_Master_Log_Pos,
+	rcs.service_state AS Slave_IO_Running,
+	rss.service_state AS Slave_SQL_Running,
+	t.processlist_time AS Seconds_Behind_Master,
+	rcs.last_error_number AS Last_IO_Errno,
+	rcs.last_error_message AS Last_IO_Error,
+	rss.last_error_number AS Last_SQL_Errno,
+	rss.last_error_message AS Last_SQL_Error,
+	tc.processlist_state AS Slave_IO_State,
+	t.processlist_state AS Slave_SQL_Running_State 
+FROM
+	mysql.slave_master_info smi
+	JOIN mysql.slave_relay_log_info ssi USING ( channel_name )
+	JOIN PERFORMANCE_SCHEMA.replication_connection_status rcs USING ( channel_name )
+	LEFT JOIN PERFORMANCE_SCHEMA.replication_applier_status_by_worker rss USING ( channel_name )
+	LEFT JOIN PERFORMANCE_SCHEMA.threads t ON ( rss.thread_id = t.thread_id )
+	LEFT JOIN PERFORMANCE_SCHEMA.threads tc ON ( rcs.thread_id = tc.thread_id )
+```
+
 
 ## inspect innodb buffer pool pages
 ```sql
