@@ -173,3 +173,15 @@ SELECT
 FROM total
 INNER JOIN dirt;
 ```
+
+
+## inspect alter tables
+```sql
+SELECT
+  EVENT_NAME,
+	WORK_COMPLETED,
+  WORK_ESTIMATED,
+  ROUND(100 * WORK_COMPLETED / WORK_ESTIMATED, 2) AS pct_complete,
+  ROUND(TIMER_WAIT / 1e12 / 60, 2) AS duration_minutes
+FROM performance_schema.events_stages_current;
+```
