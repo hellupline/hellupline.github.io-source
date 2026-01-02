@@ -22,7 +22,11 @@ SELECT
     pl.INFO AS "text"
 FROM information_schema.PROCESSLIST AS pl
 LEFT OUTER JOIN information_schema.INNODB_TRX AS trx ON pl.ID = trx.trx_mysql_thread_id
-WHERE pl.COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
+WHERE
+    pl.COMMAND NOT IN ('Sleep', 'Connect', 'Binlog Dump')
+    AND pl.TIME > 1200
+    AND pl.COMMAND = 'Query'
+    AND pl.STATE = 'executing'
 ORDER BY pl.TIME DESC;
 ```
 
