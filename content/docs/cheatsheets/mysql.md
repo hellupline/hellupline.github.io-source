@@ -11,6 +11,7 @@ SELECT
     CONCAT("CALL mysql.rds_kill_query('" , ID, "');") AS "run_to_kill",
     @@hostname AS "hostname",
     pl.ID AS "id",
+	pl.HOST AS "host",
     pl.USER AS "user",
     pl.DB AS "database",
     pl.COMMAND AS "command",
